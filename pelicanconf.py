@@ -86,3 +86,4 @@ READERS = {'html': None}
 #DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 DIRECT_TEMPLATES = (('index', 'search'))
 
+SLUGIFY_SOURCE = 'basename'

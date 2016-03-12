@@ -18,28 +18,28 @@ Pycharm умеет отображать нарушения стилистики 
 ищем язык Python, в выпадаеющем меню - PEP8 coding style violation. Дальше идем на страницу [PEP8’s documentation][], 
 и ищем код ошибки. Жмем плюсик, и вставляем код:
 
-{% img lb-image /images/pycharm_using/1.png 760 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/1.png 500 %}
 
 
 ### Сохранение файлов с unix-like окончанием строк
 
 Действует только для файлов, созданных после установки этой опции
 
-{% img lb-image /images/pycharm_using/2.png 600 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/2.png 500 %}
 
 ### Заключение выделенного текста в качвычки
 
 Очень удобно заключать выделенный текст в кавычки или скобки нажатием одной кнопки. Работает для 
 любых скобок или кавычек. Для этого включаем следующую опцию
 
-{% img lb-image /images/pycharm_using/3.png 600 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/3.png 500 %}
 
 ### Создание темплейтов для новых файлов
 
 Я использую темплейт для новых записей в блоге. Темплейты могут содержать переменные. Подробнее в [документации
 Pycharm][]
 
-{% img lb-image /images/pycharm_using/4.png 760 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457788278/pycharm/4.png 500 %}
 
 ### Подсветка синтаксиса Ruby
 
@@ -57,7 +57,7 @@ Pycharm][]
 строки составляет 80 символов. Pycharm умеет делать автоматический перенос на новую строку при достижении этого
 ограничения. Однако, это не всегда удобно и необходимо, и отключить эту фичу можно в настройках:
 
-{% img image http://res.cloudinary.com/swasher/image/upload/c_crop,w_760/v1457613925/esko/pycharm_right_margin.png %}
+{% img image http://res.cloudinary.com/swasher/image/upload/c_crop,w_760/v1457613925/pycharm/pycharm_right_margin.png %}
 
 
   [PEP8’s documentation]: http://pep8.readthedocs.org/en/latest/intro.html
