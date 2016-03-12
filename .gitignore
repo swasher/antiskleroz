@@ -1,0 +1,14 @@
+/themes/flasky
+/themes/orig-subtle
+/themes/pelican-elegant
+/content/draft
+/content/images
+/.vagrant
+/cache
+/srv.pid
+/output
+
+*.pyc
+__pycache__/
+.idea/
+.vagrant/
