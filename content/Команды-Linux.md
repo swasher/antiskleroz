@@ -749,5 +749,18 @@ Python
     ::console
     $ python -m SimpleHTTPServer
 
+pip: удалить все пакеты, которые отсутствуют в requirements.txt. Обычно эту операцию проводят в виртуальном окружении питон.
+
+> небольшое пояснение: с помощью awk извлекаем два списка - из pip freeze и из requirements.txt. Передаем их в diff и сравниваем.
+> От результата берем только первый столбец и передаем его как аргумент в pip uninstall
+
+    $ diff --suppress-common-lines -y \
+        <(pip freeze | awk -F"==" '{ print $1 }') \
+        <(awk -F"==" '{ print $1 }' requirements.txt) | \
+        awk '{print $1}' | \
+        xargs pip uninstall -y
+
+
+
 [что делает балансировка]: https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F
 [опции балансировки]: https://btrfs.wiki.kernel.org/index.php/Balance_Filters
