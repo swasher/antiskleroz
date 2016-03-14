@@ -183,7 +183,8 @@ Rtorrent+libtorrent
     system.file_allocate.set = yes
 
     #Автоматическое создание папки назначения
-    system.method.set_key=event.download.inserted_new,create_struct,"d.open= ; f.multicall=default,  
+    system.method.set_key=event.download.inserted_new,create_struct,"d.open= ; \
+    f.multicall=default,
     "execute={sh,/home/rtorrent/creator.sh,$f.get_frozen_path=}\""
 
 **или** берем официальный конфиг с комментариями:
@@ -508,9 +509,11 @@ Rtorrent, будучи консольным клиентом, не умеет р
             /etc/init.d/rtorrent start
             if  ps -C "rtorrent" | grep -c "rtorrent" > /dev/null
             then
-                echo `date`" : trying start rtorrent - started OK!" >> /home/rtorrent/start.rtorrent.log
+                echo `date`" : trying start rtorrent - started OK!" >> \
+                /home/rtorrent/start.rtorrent.log
             else
-                echo `date`" : trying start rtorrent - FAIL!" >> /home/rtorrent/start.rtorrent.log
+                echo `date`" : trying start rtorrent - FAIL!" >> \
+                /home/rtorrent/start.rtorrent.log
            fi
     fi
 
@@ -608,9 +611,9 @@ XMLRPC, становится слишком большой. Rutorent тормо�
 
 * Логи rtorrent - для их получения нужно добавить в конфиг следующие строки:
 
-    ::console
-    log.execute = /home/rtorrent/exec.log
-    log.xmlrpc  = /home/rtorrent/xmlrpc.log
+        ::console
+        log.execute = /home/rtorrent/exec.log
+        log.xmlrpc  = /home/rtorrent/xmlrpc.log
 
 * Логи rutorrent - в файле `/var/www/rutorrent/conf/config.php` ищем строку `$log_file = '/tmp/errors.log';` - расположение
 лога можно поменять на более удобное
@@ -625,11 +628,11 @@ XMLRPC, становится слишком большой. Rutorent тормо�
 
 * При нарушении прав доступа на файлы и папки rutorrent исправляем таким образом:
 
-    :console
-    $ cd /var/www/rutorrent
-    $ chown -R www-data:www-data share/
-    $ find share/ -type d -exec chmod 777 {} \;
-    $ find share/ -type f -exec chmod 666 {} \;
+        :console
+        $ cd /var/www/rutorrent
+        $ chown -R www-data:www-data share/
+        $ find share/ -type d -exec chmod 777 {} \;
+        $ find share/ -type f -exec chmod 666 {} \;
 
 * Rtorrent может не запускаться, если не может по какой-то причине получить права на файл `../rtorrent/session/rtorrent.lock`. Достаточно удалить этот файл.
 

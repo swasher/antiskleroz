@@ -69,7 +69,7 @@ Class name для библиотеки lightbox2 - `lb-image`. Путь к ка�
 
 Ну и напоследок - кортинка с эффектом lightbox!
 
-{% img lb-image /images/picture.jpg 780 Beer %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457945760/beer.jpg 780 Beer %}
 
   
   [https://github.com/jprine/pelican-plugins/tree/master/lightbox]: https://github.com/jprine/pelican-plugins/tree/master/lightbox

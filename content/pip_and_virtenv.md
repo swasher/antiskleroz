@@ -132,7 +132,7 @@ PyCharm
 
 Создаем в PyCharm новый проект, интерпретатор выбираем из нашего виртуального окружения:
 
-{% img lb-image /images/pip/1.png 770 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457945825/pycharm/pip1.png 770 %}
 
 Далее нужно сделать следующее, я не буду подробно расписывать:
 
@@ -142,7 +142,7 @@ PyCharm
 - включить поддержу django
 - настраиваем конфигурацию запуска dev-сервера из PyCharm, как на картинке:
 
-{% img lb-image /images/pip/2.png 770 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457945826/pycharm/pip2.png 770 %}
 
 Не забываем указать наш интерпретатор. Хост `0.0.0.0` нужен для того, чтобы сервер был доступен с любого
 внешнего адреса, иначе только с localhost.

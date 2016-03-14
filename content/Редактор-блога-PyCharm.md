@@ -2,6 +2,7 @@ Title: Редактирование блога с помощью PyCharm
 Date: 2014-06-05 15:17
 Category: IT
 Tags: blog, pycharm
+Slug: pycharm-edit-blog
 Author: Swasher
 
 
@@ -24,31 +25,31 @@ Author: Swasher
 
 Устанавливаем, запускаем, и создаем новый проект `blog`. Выбор интерпретатора питон не важен.
 
-{% img lb-image /images/pycharm-0001.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946104/pycharm/pycharm-0001.png 750 %}
 
 Далее идем в File->Settings, и настраиваем ssh
 
-{% img lb-image /images/pycharm-0002.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946104/pycharm/pycharm-0002.png 750 %}
 
 На вкладке Mappings путь устанавливаем так, чтобы root path + deployment path указывал на папку с нашими документами.
 
-{% img lb-image /images/pycharm-0004.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946105/pycharm/pycharm-0004.png 750 %}
 
 Опять идем в Settings, и устанавливаем плагин Markdown.
 
-{% img lb-image /images/pycharm-0005.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946105/pycharm/pycharm-0005.png 750 %}
 
 После этого у нас появится возможность видеть превью статей.
 
-{% img lb-image /images/pycharm-0006.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946106/pycharm/pycharm-0006.png 750 %}
 
 Настраиваем аплоад. Мне удобно, чтобы файл аплоадился каждый раз, когда я нажимаю Ctrl-S. Для этого включаем опцию
 
-{% img lb-image /images/pycharm-0008.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946105/pycharm/pycharm-0008.png 750 %}
 
 Установим шрифт с нормальными русскими буквами, они не в каждом шрифте есть
 
-{% img lb-image /images/pycharm-0009.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946105/pycharm/pycharm-0009.png 750 %}
 
 Создадим темплейт для новых записей блога (Settings -> File and code templates)
 
@@ -59,10 +60,10 @@ Author: Swasher
     Category: IT
     Author: Swasher
 
-И последняя приятность. После внесения изменений в контент нужно пересобрать сайт, делается это командой `make html` 
+И последняя приятность. После внесения изменений в контент нужно пересобрать сайт, делается это командой `make html`
 Раньше для этого нужно было логиниться по ssh и запускать процесс вручную. PyCharm имеет функцию выполнения команд через ssh, воспользуемся этим:
 
-{% img lb-image /images/pycharm-0011.png 780 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/v1457946106/pycharm/pycharm-0011.png 750 %}
   
 Теперь в меню Tools есть пункт Rebuild blog, а в вывод консоли мы увидим прямо в IDE.
 

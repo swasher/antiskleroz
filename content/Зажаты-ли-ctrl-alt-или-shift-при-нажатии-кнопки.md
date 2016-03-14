@@ -5,34 +5,46 @@ Tags: delphi
 Author: Swasher
 Slug: pressed-ctrl-alt-shift
 
-function CtrlDown : Boolean;
-var
-State : TKeyboardState;
-begin
-GetKeyboardState(State);
-Result := ((State[vk\_Control] And 128) \<\> 0);
-end;
+Функция CtrlDown
 
-function ShiftDown : Boolean;
-var
-State : TKeyboardState;
-begin
-GetKeyboardState(State);
-Result := ((State[vk\_Shift] and 128) \<\> 0);
-end;
+    ::pascal
+    function CtrlDown : Boolean;
+    var
+    State : TKeyboardState;
+    begin
+    GetKeyboardState(State);
+    Result := ((State[vk\_Control] And 128) \<\> 0);
+    end;
 
-function AltDown : Boolean;
-var
-State : TKeyboardState;
-begin
-GetKeyboardState(State);
-Result := ((State[vk\_Menu] and 128) \<\> 0);
-end;
+Функция ShiftDown
 
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-if ShiftDown then
-Form1.Caption := 'Shift'
-else
-Form1.Caption := '';
-end;
+    ::pascal
+    function ShiftDown : Boolean;
+    var
+    State : TKeyboardState;
+    begin
+    GetKeyboardState(State);
+    Result := ((State[vk\_Shift] and 128) \<\> 0);
+    end;
+
+Функция AltDown
+
+    ::pascal
+    function AltDown : Boolean;
+    var
+    State : TKeyboardState;
+    begin
+    GetKeyboardState(State);
+    Result := ((State[vk\_Menu] and 128) \<\> 0);
+    end;
+
+Обработчик кнопки
+
+    ::pascal
+    procedure TForm1.Button1Click(Sender: TObject);
+    begin
+    if ShiftDown then
+    Form1.Caption := 'Shift'
+    else
+    Form1.Caption := '';
+    end;

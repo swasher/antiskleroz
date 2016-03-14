@@ -22,19 +22,23 @@
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   /* ОЧЕНЬ ХОРОШО!!! (текст) */
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
-
+/*@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   !* ОЧЕНЬ ХОРОШО!!! (текст) *!
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed&subset=cyrillic);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic&subset=cyrillic);*/
 
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic&subset=cyrillic); /* body text */
 
 
 /***** Global *****/
 /* Body */
 body {
     background: url("../images/background/exclusive_paper.png")  ;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 15px ;
+    /*font-family: 'Ubuntu', sans-serif;*/
+	/*font-family: 'PT Serif Caption', serif;*/
+	font-family: 'Merriweather', serif;
+    /*font-size: 15px ;*/
     line-height: 1.429;
     margin: 0;
     padding: 0;

@@ -4,7 +4,15 @@ Tipue Search 5.0
 Copyright (c) 2015 Tipue
 Tipue Search is released under the MIT License
 http://www.tipue.com/search
+
+Modified by SWASHER
+changes can be find by compare with .orig
+changes can be find by compare with .orig
 */
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   /* ОЧЕНЬ ХОРОШО!!! (текст) */
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
 
 
 #tipue_search_input
@@ -51,12 +59,14 @@ http://www.tipue.com/search
 }
 .tipue_search_content_title
 {
-     font: 300 21px/1.7 'Open Sans', sans-serif;
-	margin-top: 23px;
+    /* by swasher */
+    font: 300 1.4em 'PT Serif', serif;
+	margin-top: 20px;
+
 }
 .tipue_search_content_title a
 {
-     color: #333;
+     color: #690005;
      text-decoration: none;
 }
 .tipue_search_content_title a:hover
