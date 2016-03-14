@@ -1,10 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+
 import base64
 import json
 import urllib.request
 import sys
 import os
-
-# my token is 7c3ba9c89be8ebb06a1d9401e76a672204b487cf
 
 GITHUB_REPOS_API_BASE_URL = 'https://api.github.com/repos/'
 
@@ -18,11 +19,10 @@ def write_file(item, dir_name):
     token = "3c1ba9c29be3ebb06a1d9401e76a672104b432cf"
     request.add_header('Authorization', 'token %s' % token)
     """
-    # type(request) ==  is <urllib.request.Request object at 0x7fcae7e380b8>
+    # request type is <urllib.request.Request object at 0x7fcae7e380b8>
     # https://docs.python.org/3/library/urllib.request.html#request-objects
 
     responce = urllib.request.urlopen(request)
-    # responce is <class 'http.client.HTTPResponse'>, printed as <http.client.HTTPResponse object at 0x7fcae7e38208>
     # https://docs.python.org/3/library/http.client.html#httpresponse-objects
 
     # you can view some information in responce header:
@@ -50,7 +50,7 @@ def write_file(item, dir_name):
 
     body_utf = body.decode('utf-8')
     # Convert bytes to string, using utf-8 coding
-    # type(body_utf) == <class 'str'>
+    # body_utf type is <class 'str'>
 
 
     # Convert string into python data structure. Its actually json's encoding. Try decode:
@@ -70,12 +70,12 @@ def write_file(item, dir_name):
 
     # Trying decode using base64 algorithm
     contents = base64.b64decode(coded_string)
+    # contents type is <class 'bytes'>
     # Now contents store binary data, which can write directly to file, like this:
-    # type(contents) == <class 'bytes'>
     # for image
     # b'GIF89ad\x00@\x00\xe7\xff\x00\x00\x01\x00\x03\x05\x01\x07\t\x05\x11\x13\x10\x14\x16\x13\x16\x19\x1b\x18\x19\x17\x1d\x1f\x1'
     # for text
-    # b'<!DOCTYPE html>\n<html lang="en">\n<head>\n        <title>\xd0\x97\xd0\xb0\xd0\xbf\xd0\xb8\xd1\x81\xd0\xba\xd0\xb8 \xd0\xbe'
+    # b'<!DOCTYPE html>\n<html lang="en">\n<head>\n <title>\xd0\x97\xd0\xb0\xd0\xbf\xd0\xb8\xd1\x81\xd0\xba\xd0\xb8 \xd0\xbe'
 
 
     print(os.path.join(dir_name, name))
@@ -112,26 +112,3 @@ if __name__ == '__main__':
     path = '/'.join(path)
 
     write_files(GITHUB_REPOS_API_BASE_URL + path, new_dir_name)
-
-
-"""
-Вот как можно проверять на имидж
-
-def download_photo(self, img_url, filename):
-    try:
-        image_on_web = urllib.urlopen(img_url)
-        if image_on_web.headers.maintype == 'image':
-            buf = image_on_web.read()
-            path = os.getcwd() + DOWNLOADED_IMAGE_PATH
-            file_path = "%s%s" % (path, filename)
-            downloaded_image = file(file_path, "wb")
-            downloaded_image.write(buf)
-            downloaded_image.close()
-            image_on_web.close()
-        else:
-            return False
-    except:
-        return False
-    return True
-
-"""
