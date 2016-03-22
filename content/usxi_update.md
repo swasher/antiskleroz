@@ -1,16 +1,15 @@
-Title: Апгрейд ESXi с 5.1 до 5.5
+Title: Краткая шпаргалка: Апгрейд ESXi с 5.1 до 5.5
 Date: 2014-07-04 16:07
 Tags: esxi
 Category: IT
 Author: Swasher
+Slug: esxi-upgrading
 
-Краткая шпаргалка
+Включаем сервис ssh:
 
-Разрешаем ходить по ssh:
-
-Хост - configuration - Security Profile - Properties (of Services) - SSH - Options - Start
+`Хост` -> `configuration` -> `Security Profile` -> `Properties (of Services)` -> `SSH` -> `Options` -> `Start`
  
-Заходим по ssh
+Заходим по ssh.
 
 Открываем файрволл для http
 

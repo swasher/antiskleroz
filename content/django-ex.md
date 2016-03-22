@@ -42,15 +42,19 @@ Author: Swasher
     
 ## Пути для статики
 
-`STATIC_URL` - '/static/' is usually fine, it's just a prefix for static files.
+`STATIC_URL` - '/static/' Это не ПУТЬ, а УРЛ! Добавляется к имени статического файла. Например,
+ в темплейте `{% static "jquery/dist/jquery.min.js" %}` станет запросом `<site>/static/jquery/dist/jquery.min.js`
 
 `MEDIA_ROOT` - место, где хранятся залитые пользователем файлы для полей FileField.  
 
 > Absolute filesystem path to the directory that will hold [user-uploaded files].
 
 `STATIC_ROOT` - абсолютный путь к директории, куда метод `manage.py collectstatic` соберет всю статику.  
-Обычно это путь на деплойменте. Collectstatic собирает в него, в т.ч., скрипты и стили от используемых приложений, например, grappelli или admin.
-Ручками сюда ничего ложить нельзя!
+Обычно этот путь имеет смысл на деплойменте. Collectstatic собирает, в т.ч., скрипты и стили от используемых приложений,
+например, grappelli или admin. Ручками сюда ничего ложить нельзя!
+
+Еще один момент - `STATIC_ROOT` не может пересекаться с `STATICFILES_DIRS`, иначе это вызовет ексепшн `ImproperlyConfigured`.
+Ну это и логически понятно, collectstatic не может собирать файлы из одной директории в ту же самую.
 
 > The absolute path to the directory where collectstatic will collect static files for deployment.
 

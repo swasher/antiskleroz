@@ -134,12 +134,14 @@ dd {margin-left: 1.5em;}
 
 /* Inline code */
 code, tt { 
-    background: #eee;
+    background: #c3c2c2;
+	border-radius: 3px;
     padding-left: 4px; padding-right: 4px;
     margin-left: 3px; margin-right: 2px;
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', 'Courier New', Courier, monospace;
-    font-size: 1.05em;
+    font-size: 1.0em;
 }
+
 
 
 /* Code blocks */
@@ -539,7 +541,7 @@ div.pagination strong   { font-weight: normal; font-style: italic; }
 
 div.container           {
     width: 810px; /* Влияет на положение статьи по ширине*/
-    margin: 0px auto; /* Отступ от шапки до статьи*/
+    margin: 0 auto; /* Отступ от шапки до статьи*/
     padding: 0;
 }
 
@@ -553,6 +555,6 @@ div.container           {
     -webkit-border-radius: 4px 4px 4px 4px;
     height: 10px;
     padding: 4px;
-    margin: 0px 15px;
+    margin: 0 15px;
     vertical-align: top;
 }

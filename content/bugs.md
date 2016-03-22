@@ -31,3 +31,15 @@ Ubuntu 15.04. При попытке монтирование через fstab в
     //192.168.1.101/mediaserver2/ /mnt/mediaserver/ cifs user=*****, \
     password=*********, iocharset=utf8,file_mode=0777,dir_mode=0777, \
     uid=1000,gid=1000,nounix,x-systemd.automount 0 0
+
+### Ошибка bower, которой уже 4 года
+
+    ::console
+    $ bower
+    /usr/bin/env: node: No such file or directory
+
+Обсуждение [на github](https://github.com/nodejs/node-v0.x-archive/issues/3911)
+
+Лечится просто:
+
+    $ sudo ln -s /usr/bin/nodejs /usr/bin/node
