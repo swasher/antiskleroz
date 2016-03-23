@@ -92,3 +92,19 @@ fabric
     complete -F _fabric fab
 
 [ссылка](https://github.com/fabric/fabric/issues/6)
+
+heroku
+----------------------------
+
+Плагин для автокомплита здесь [https://github.com/stefansundin/heroku-bash-completion](https://github.com/stefansundin/heroku-bash-completion)
+
+    $ heroku plugins:install git://github.com/stefansundin/heroku-bash-completion.git
+    $ heroku completion:init
+
+Последняя строка должна добавить команду в `.bash_profile`, обычно
+
+    source '$HOME/.heroku/plugins/heroku-bash-completion/heroku-completion.bash'
+
+У меня `.bash_profile` отсутствует, поэтому я добавил ручками:
+
+    echo "source '$HOME/.heroku/plugins/heroku-bash-completion/heroku-completion.bash'" >> .bashrc
