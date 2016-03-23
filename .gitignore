@@ -5,6 +5,7 @@
 /content/images
 /.vagrant
 /themes/subtle/static/tipuesearch/tipuesearch.css.orig
+/pelican.pid
 /cache
 /srv.pid
 /output
