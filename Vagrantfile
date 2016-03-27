@@ -30,6 +30,7 @@ Vagrant.configure(2) do |config|
     apt-get install python3-venv python3-dev -y
     npm install -g bower
     usermod -aG vagrant www-data
+    echo '    IdentityFile /home/vagrant/.ssh/github' >> /etc/ssh/ssh_config
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL

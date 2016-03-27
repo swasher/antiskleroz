@@ -26,6 +26,17 @@ Author: Swasher
 Все команды выполняются внутри Vagrant-контейнера. Деплой на heroku из-под Windows тоже возможен, но там есть ряд
 несовместимостей, все подробно описаны с соотв. разделах статей на [сайте](devcenter.heroku.com) Heroku.
 
+Toolbelt
+--------------------
+
+Первое, что нужно сделать, это установить в систему "тулбелт" - приложение, которое позволяет
+управдять инстансами heroku из командной строки. Для debian/ubuntu команда будет такая
+
+    ::console
+    $ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+для других систем смотрим на [toolbelt.heroku.com](https://toolbelt.heroku.com/debian)
+
 Procfile
 --------------------
 
@@ -46,6 +57,92 @@ Procfile
     $ pip install gunicorn
     ...
     $ pip freeze > requirements.txt
+
+
+runtime.txt
+---------------------------------
+
+Heroku должен правильно определить, что приложение у нас написано на Python. Происходит это очень просто -
+по наличию файла `requirements.txt` в корне проекта. Даже если нет зависимых пакетов, `requirements.txt` должен
+присутствовать.
+
+Когда происходит деплой, heroku сообщает о найденном приложении python:
+
+    ::console
+    $ git push heroku master
+    ...
+    remote: -----> Python app detected
+    remote: -----> Installing python-2.7.11
+
+Это означает, что heroku будет разворачивать наше приложение, используя питон версии `2.7.11`. Причем не имеет значения,
+какую версию питона мы используем при разработке.
+
+Чтобы изменить версию питона на продакшене, нужно указать ее в файле `runtime.txt`:
+
+    ::console
+    $ echo "python-3.5.1" >> runtime.txt
+    $ git add runtime.txt
+    $ git commit -am "add runtime.txt"
+    $ git push heroku master
+    remote: -----> Python app detected
+    remote: -----> Installing python-3.5.1
+
+Не все версии питона одинаково поддерживаются. На момент написания статьи это были `python-2.7.11` и `python-3.5.1`.
+Можно указать и другие версии, однако heroku одобряет и поддерживает именно эти.
+Подробнее - [Supported python runtimes](https://devcenter.heroku.com/articles/python-support#supported-python-runtimes).
+
+
+settings.py и среда выполнения
+---------------------------------
+
+Настройки Django для среды разработки и для heroku будут разнится, поэтому нужно позаботиться о том, чтобы
+наше приложение знало, где оно выполняется. Я делаю это через переменные окружения. На ubuntu/debian это делается так:
+
+    $ sudo echo 'SERVER=development' >> /etc/environment
+
+а на heroku так:
+
+    $ heroku config:set SERVER=production
+
+Или можно через интерфейс, в секции Settingы -> Config Variables. Проверить установленные переменные можно или там же в интерфейсе,
+или командой
+
+    $ heroku config
+
+но обязательно из директории проекта (или понадобится явно указать `--app APP`)
+
+Далее в settings.py делаем такую конструкцию:
+
+    SERVER = os.getenv('SERVER')
+    if SERVER == 'production':
+        # heroku specific settings
+    if SERVER == 'develoment':
+        # develoment specific settings
+
+
+Sqlite или Postgres
+----------------------------------
+
+Sqlite не подходит для использования на heroku. На heroku используется так
+называемая [ephemeral filesystem](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem)
+Каждый `dyno` обладает такой файловой системой. На нее можно писать, с нее можно читать, но она время от времени сбрасывается.
+Так же она очищается при деплое. Поэтому нельзя использовать файловую систему для хранения перманентных данных.
+
+Поэтому в качестве базы данных нужно использовать Postgres. Heroku предоставляет бесплатный инстанс базы данных
+PostgreSQL с ограницением в 10k строк. Это ограничение нужно учитывать при выборе Heroku как бесплатного сервиса.
+
+Однако если приложение не использует каких-то особенностей Postgres, то можно оставить среду разработки на sqlite,
+чтобы не устанавливать Postgres локально.
+
+Heroku Postgres работает как адд-он к приложению. Аддон можно установить командой
+
+    $ heroku addons:create heroku-postgresql:<PLANNAME>
+
+где <PLANNAME> - название тарифного плана, для free плана это `hobby-dev`
+
+Про ограничения этого плана можно почитать [здесь](https://devcenter.heroku.com/articles/heroku-postgres-plans#hobby-tier)
+
+Следующее, что нам нужно сделать, это установить psycopg2 для использования
 
 Конфигурация базы данных
 ----------------------------------
@@ -97,39 +194,7 @@ settings.py:
 Подробнее: [Concurrency and Database Connections in Django](https://devcenter.heroku.com/articles/python-concurrency-and-database-connections)
 
 
-Python
----------------------------------
 
-Heroku должен правильно определить, что приложение у нас написано на Python. Происходит это очень просто -
-по наличию файла `requirements.txt` в корне проекта. Даже если нет зависимых пакетов, `requirements.txt` должен
-присутствовать.
-
-Когда происходит деплой, heroku сообщает о найденном приложении python:
-
-    ::console
-    $ git push heroku master
-    ...
-    remote: -----> Python app detected
-    remote: -----> Installing python-2.7.11
-
-Версия питона, на которой запустится наш сервис на heroku, не будет такой же, какую мы установили при разработке.
-Чтобы изменить версию питона на продакшене, нужно указать ее:
-
-    ::console
-    $ cat runtime.txt
-    python-2.7.11
-
-Не все версии питона одинаково поддерживаются. На момент написания статьи это были `python-2.7.11` и `python-3.5.1`.
-Можно указать и другие версии, однако heroku одобряет и поддерживает именно эти.
-Подробнее - [Supported python runtimes](https://devcenter.heroku.com/articles/python-support#supported-python-runtimes).
-
-    ::console
-    $ echo "python-3.5.1" >> runtime.txt
-    $ git add runtime.txt
-    $ git commit -am "add runtime.txt"
-    $ git push heroku master
-    remote: -----> Python app detected
-    remote: -----> Installing python-3.5.1
 
 
 Обслуживание статики
@@ -199,19 +264,15 @@ wsgi.py (целиком)
 
 Используем команду [heroku local](https://devcenter.heroku.com/articles/heroku-local):
 
-    $ heroku local web
-    heroku-cli: Installing Toolbelt v4... done
-    For more information on Toolbelt v4: https://github.com/heroku/heroku-cli
-    heroku-cli: Adding dependencies... done
-    heroku-cli: Installing core plugins... done
-    Downloading forego-0.16.1 to /home/vagrant/.heroku... done
-    forego | starting web.1 on port 5000
-    web.1  | [2016-03-20 08:24:18 +0000] [1724] [INFO] Starting gunicorn 19.4.5
-    web.1  | [2016-03-20 08:24:18 +0000] [1724] [INFO] Listening at: http://0.0.0.0:5000 (1724)
-    web.1  | [2016-03-20 08:24:18 +0000] [1724] [INFO] Using worker: sync
-    web.1  | [2016-03-20 08:24:18 +0000] [1727] [INFO] Booting worker with pid: 1727
+    $ heroku local
+    [WARN] No ENV file found
+    [OKAY] Trimming display Output to 210 Columns
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Starting gunicorn 19.4.5
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Listening at: http://0.0.0.0:5000 (16437)
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Using worker: sync
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16440] [INFO] Booting worker with pid: 16440
 
-Конечно, команда должна выполняться при включенном виртуальном окружении. Команда запустит сервер на 5000 порту.
+Конечно, команда должна выполняться при включенном виртуальном окружении. `heroku local` запустит сервер на 5000 порту.
 Если все прошло удачно, двигаемся дальше, если нет - анализируем вывод команды.
 
 
@@ -231,7 +292,7 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
     $ heroku buildpacks:add https://github.com/ejholmes/heroku-buildpack-bower
     $ heroku buildpacks:add heroku/python
 
-
+На этом все, bower должен установиться и установать зависимости, наблюдаем так ли это в логе, во время деплоя.
 
 Деплой на Heroku
 ---------------------------------------
@@ -254,7 +315,7 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
 Создаем инстанс
 
     ::console
-    $ heroku create
+    $ heroku create <name_of_project>
     Creating intense-falls-9163... done, stack is cedar-14
     https://*-*-*-*-springs-13087.herokuapp.com/ | https://git.heroku.com/*-*-*-*-springs-13087.git
     http://intense-falls-9163.herokuapp.com/ | https://git.heroku.com/intense-falls-9163.git
@@ -265,6 +326,11 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
     ::console
     $ git remote rm heroku
     $ heroku git:remote -a <new_instance_name>
+
+Если мы хотим просто переименовать инстанс, то выполняем такую команду
+
+    ::console
+    $ heroku apps:rename <new_instance_name>
 
 Теперь можно делать деплой:
 

@@ -747,7 +747,11 @@ Python
 Быстро поднять веб-сервер в текущей директории на 8000 порту
 
     ::console
+    # python2
     $ python -m SimpleHTTPServer
+    # python3
+    $ python -m http.server
+
 
 pip: удалить все пакеты, которые отсутствуют в requirements.txt. Обычно эту операцию проводят в виртуальном окружении питон.
 
