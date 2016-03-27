@@ -138,11 +138,20 @@ Heroku Postgres работает как адд-он к приложению. А�
 
     $ heroku addons:create heroku-postgresql:<PLANNAME>
 
-где <PLANNAME> - название тарифного плана, для free плана это `hobby-dev`
+где <PLANNAME> - название тарифного плана, для free плана это `hobby-dev`.
 
 Про ограничения этого плана можно почитать [здесь](https://devcenter.heroku.com/articles/heroku-postgres-plans#hobby-tier)
 
-Следующее, что нам нужно сделать, это установить psycopg2 для использования
+После этого в нашем приложении появится переменная окружения `DATABASE_URL` для подключения к инстансу Postgres.
+
+Следующее, что нам нужно сделать, это установить psycopg2 для использования Python совместно с Postgres.
+
+    ::console
+    $ sudo apt-get install python3-dev # для нужной версии питона
+    $ sudo apt-get install libpq-dev
+    $ pip install psycopg2
+
+
 
 Конфигурация базы данных
 ----------------------------------
@@ -151,15 +160,14 @@ Heroku Postgres работает как адд-он к приложению. А�
 передаются в среду выполнения как переменные окружения. В них рекомендуется хранить приватные настройки, такие
 как логины и пароли.
 
-Там же Heroku хранит и настройки подключения к ДБ, называемые `DATABASE_URL`, которые традиционно хардкодятся
-в джанго-приложениях.
+Там же Heroku хранит и настройки подключения к ДБ Posgres, в переменной `DATABASE_URL`.
 
-Пакет [dj-database-url](https://warehouse.python.org/project/dj-database-url/) парсит наш проект джанго и
-предоставляет настройки подключения для Heroku.
+Чтобы внедрить эти параметры в наш `settings.py`, на помощь приходит
+пакет [dj-database-url](https://warehouse.python.org/project/dj-database-url/). Он парсит `DATABASE_URL` и
+подставляет данные подключения в `DATABASES['default']` в нашем проекте джанго.
 
     ::console
     $ pip install dj-database-url
-    ...
     $ pip freeze > requirements.txt
 
 В `settings.py` добавляем (убирать ничего не нужно) настройки подключения к ДБ в соответствии с `$DATABASE_URL`:
@@ -194,16 +202,13 @@ settings.py:
 Подробнее: [Concurrency and Database Connections in Django](https://devcenter.heroku.com/articles/python-concurrency-and-database-connections)
 
 
-
-
-
 Обслуживание статики
 ----------------------------------------
 
 > TODO перевести
 
-Django settings for static assets can be a bit difficult to configure and debug. However, if you just add the following settings to
-your settings.py, everything should work exactly as expected:
+Django settings for static assets can be a bit difficult to configure and debug.
+However, if you just add the following settings to your settings.py, everything should work exactly as expected:
 
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -218,11 +223,7 @@ your settings.py, everything should work exactly as expected:
         os.path.join(PROJECT_ROOT, 'static'),
     )
 
-Older versions of Django won’t automatically create the target directory (STATIC_ROOT) that collectstatic uses, if it isn’t available.
-You may need to create this directory in your codebase, so it will be available when collectstatic is run. Git does not support empty
-file directories, so you will have to create a file inside that directory as well.
-
-For more information, see [Django and Static Assets](https://devcenter.heroku.com/articles/django-assets).
+Для дополнительной информации см. [Django and Static Assets](https://devcenter.heroku.com/articles/django-assets).
 
 
 Whitenoise
@@ -253,27 +254,10 @@ wsgi.py (целиком)
     from django.core.wsgi import get_wsgi_application
     from whitenoise.django import DjangoWhiteNoise
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uchislova.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "<project>.settings")
 
     application = get_wsgi_application()
     application = DjangoWhiteNoise(application)
-
-
-Запуск приложения локально
------------------------------------------
-
-Используем команду [heroku local](https://devcenter.heroku.com/articles/heroku-local):
-
-    $ heroku local
-    [WARN] No ENV file found
-    [OKAY] Trimming display Output to 210 Columns
-    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Starting gunicorn 19.4.5
-    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Listening at: http://0.0.0.0:5000 (16437)
-    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Using worker: sync
-    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16440] [INFO] Booting worker with pid: 16440
-
-Конечно, команда должна выполняться при включенном виртуальном окружении. `heroku local` запустит сервер на 5000 порту.
-Если все прошло удачно, двигаемся дальше, если нет - анализируем вывод команды.
 
 
 Bower
@@ -293,6 +277,24 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
     $ heroku buildpacks:add heroku/python
 
 На этом все, bower должен установиться и установать зависимости, наблюдаем так ли это в логе, во время деплоя.
+
+
+Запуск приложения локально
+-----------------------------------------
+
+Используем команду [heroku local](https://devcenter.heroku.com/articles/heroku-local):
+
+    $ heroku local
+    [WARN] No ENV file found
+    [OKAY] Trimming display Output to 210 Columns
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Starting gunicorn 19.4.5
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Listening at: http://0.0.0.0:5000 (16437)
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16437] [INFO] Using worker: sync
+    4:17:32 PM web.1 |  [2016-03-27 16:17:32 +0000] [16440] [INFO] Booting worker with pid: 16440
+
+Конечно, команда должна выполняться при включенном виртуальном окружении. `heroku local` запустит сервер на 5000 порту.
+Если все прошло удачно, двигаемся дальше, если нет - анализируем вывод команды.
+
 
 Деплой на Heroku
 ---------------------------------------
@@ -337,7 +339,7 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
     ::console
     $ git push heroku master
 
-Если во время деплоя что-то пошло не так, исправляем ошибки, делаем коммит, замем деплой
+Если во время деплоя что-то пошло не так, исправляем ошибки, делаем коммит, затем снова деплой
 
     ::console
     $ git commit -am "error fixed"
@@ -445,3 +447,28 @@ buildpack'и и [неофициальные](https://devcenter.heroku.com/articl
        82caeec..7bb8761  master -> master
 
 После этого остается лишь посмотреть адрес нашего приложения в админке сервиса и скопировать его в браузер :)
+
+Custom domain
+------------------------
+
+Бесплатный тир heroku так же поддерживает custom domain для нашего приложения. Использовать Custom domain достаточно
+просто: сначла нужно подключить домен к приложению
+
+    ::console
+    $ heroku domains:add www.example.com
+    $ heroku domains
+    === fathomless-springs-13087 Heroku Domain
+    fathomless-springs-11111.herokuapp.com
+
+    === fathomless-springs-13087 Custom Domains
+    Domain Name       DNS Target
+    ────────────────  ──────────────────────────────────────
+    www.example.com   fathomless-springs-11111.herokuapp.com
+
+Затем добавить запись CNAME у доменного провайдера, ссылающуюся на DNS Target из таблички, примерно так
+
+Имя  | Тип    | Данные
+-----|------- | -------------
+ @   | CNAME  | fathomless-springs-13087.herokuapp.com.
+
+Точка в конце DNS Target может присутствовать, а может и нет, в зависмости от требований DNS провайдера.

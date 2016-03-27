@@ -134,12 +134,13 @@ dd {margin-left: 1.5em;}
 
 /* Inline code */
 code, tt { 
-    background: #c3c2c2;
+	background: #ededed;
 	border-radius: 3px;
+
     padding-left: 4px; padding-right: 4px;
     margin-left: 3px; margin-right: 2px;
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', 'Courier New', Courier, monospace;
-    font-size: 1.0em;
+    font-size: 0.95em;
 }
 
 
@@ -150,7 +151,7 @@ pre {
     display: block;
 
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', 'Courier New', Courier, monospace;
-    font-size: 1em;
+    font-size: 0.9em;
 
     padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;
     margin-bottom: 1.2em;
@@ -442,7 +443,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
 .hentry img{display : none ;}
-.entry-title {font-size: 3em; margin-bottom: 10px; margin-top: 0;}
+.entry-title {font-size: 2.2em; margin-bottom: 10px; margin-top: 0;}
 .entry-title a:link, .entry-title a:visited {text-decoration: none; color: #333;}
 .entry-title a:visited {background-color: #fff;}
 
