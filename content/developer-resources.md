@@ -1,6 +1,6 @@
 Title: Инструменты и ресурсы для разработчика
 Date: 2016-03-13 20:02
-Tags: tags
+Tags: web
 Category: IT
 Author: Swasher
 
@@ -10,6 +10,10 @@ Author: Swasher
 - [wunderlist.com](http://wunderlist.com) - имхо лучший сервис ведения списков (в т.ч. todo)
 
 - [keep.google.com](https://keep.google.com/) - сервис заметок
+
+- [lastpass](https://lastpass.com) - синхронизация паролей браузера
+
+- [keeweb.info](https://app.keeweb.info/) - хранилище паролей от "железа" (with dropbox sync)
 
 Облачные хранилища
 -----------------------
@@ -27,6 +31,21 @@ Author: Swasher
 
 - [Cloud Source Repositories](https://cloud.google.com/source-repositories/) – бесплатные приватные GIT-репозитории, развернутые на облачной платформе Google Cloud. Сервис поддерживает синхронизацию с репозиториями GitHub и Bitbucket. Размер хранилища до 500 Мб.
 
+- [gitkraken](https://www.gitkraken.com/) - графический клиент для git
+
+IDE и редакторы
+-------------------------
+
+- [pycharm](https://www.jetbrains.com/pycharm/) - лучшая IDE для python
+
+- [atom.io](https://atom.io/) - текстовый редактор от GitHub
+
+- [Koding IDE](http://www.koding.com/) - онлайн IDE, в вирт. машине Ubuntu, плюс групповая работа
+
+- [prose.io](http://prose.io/) - сервис, позволяющий напрямую редактировать файлы в репозитории GitHub
+
+- [c9.io](http://c9.io) - Cloud9 IDE, мощная онлайн IDE
+
 Онлайн инструменты разработки и тестирования
 -----------------------
 
@@ -34,22 +53,27 @@ Author: Swasher
 
 - [browsershots.org](http://browsershots.org) - делает скриншот страницы во всех известных браузерах
 
-- [c9.io](http://c9.io) - Cloud9 IDE, мощная онлайн IDE
+- [mapbox.com](https://www.mapbox.com/) - платформа для разработки приложений на основе карт (гео)
 
-- [Koding IDE](http://www.koding.com/) - онлайн IDE, в вирт. машине Ubuntu, плюс групповая работа
-
-- [prose.io](http://prose.io/) - сервис, позволяющий напрямую редактировать файлы в репозитории GitHub
-
-Тестирование css, html, js
+Тестирование кода, css, html, js
 ------------------------
+
+- [repl.it](https://repl.it) - запуск кода, поддерживает множество языков
 
 - [bootply.com](http://www.bootply.com/) - тестирование html, css, javascript
 
 - [jsfiddle.net](https://jsfiddle.net/) - тестирование html, css, javascript
 
+- [codepen.io](http://codepen.io/) - тестирование html, css, javascript
+
 - [bootsnipp.com](http://bootsnipp.com/) - множество образцов макетов на бутстрапе, например формы регистрации
 
 - [runnable.io](https://runnable.io/) - песочница для запуска приложений, в т.ч python/django
+
+СУБД
+----------------------
+
+[mongotron.io](http://mongotron.io/) - Cross platform MongoDB management. Open Source, built using Electron and Angular JS
 
 Фронтенд
 -----------------------
@@ -99,6 +123,13 @@ Python
 
 - [serverbear.com](http://serverbear.com/) - сводная информация по всем vps
 
+PaaS
+----------------------
+
+- [heroku](https://www.heroku.com/) - Heroku одно из немногих мест, где действительно бесплатнои качественно можно развернуть django-приложение.
+
+- [paasify.it](http://www.paasify.it/) - подбор Paas по параметрам
+
 Домены
 -----------------------
 
@@ -112,4 +143,3 @@ Python
 -----------------------
 
 - [mailjet.com](https://www.mailjet.com/) - рассылка писем, множество фич. Free - 6000 emails/month
-

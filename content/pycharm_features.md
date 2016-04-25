@@ -4,6 +4,12 @@ Category: IT
 Tags: pycharm
 Author: Swasher
 
+### EDC плагины
+
+- [YAML/Ansible support](https://github.com/vermut/intellij-ansible)
+- [TextMate bundles support](https://github.com/textmate/ruby.tmbundle)
+- Markdown support
+
 ### Полезные шоткаты
 
 - `Shift-F6` - переименовать имя переменной или функции 
@@ -58,6 +64,20 @@ Pycharm][]
 ограничения. Однако, это не всегда удобно и необходимо, и отключить эту фичу можно в настройках:
 
 {% img image http://res.cloudinary.com/swasher/image/upload/c_crop,w_760/v1457613925/pycharm/pycharm_right_margin.png %}
+
+### gracefully restart for uwsgi server
+
+В разработке приложений Django я использую не дев-сервер, а uwsgi, настроенный точно так же, как на продакшене.
+После внесения изменений в код, его надо перезавпустить, для чего я использую `Remote ssh external tools`:
+
+![](http://res.cloudinary.com/swasher/image/upload/v1459431381/pycharm/graceful_reload.png)
+
+Затем в настройках keymap назначаю кнопку - и теперь сервер можно перезапустить "одной кнопкой"!
+
+### Reformat on paste
+
+Чтобы блок коды вставлялся в новую позицию с правильными отступами, нужно включить функцию `Setting` -> `Editor` ->
+`General` -> `Smart Keys`, выбрать `Indent Block`
 
 
   [PEP8’s documentation]: http://pep8.readthedocs.org/en/latest/intro.html
