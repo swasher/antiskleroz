@@ -468,6 +468,6 @@ Custom domain
 
 Имя  | Тип    | Данные
 -----|------- | -------------
- @   | CNAME  | fathomless-springs-13087.herokuapp.com.
+ @   | CNAME  | fathomless-springs-11111.herokuapp.com.
 
 Точка в конце DNS Target может присутствовать, а может и нет, в зависмости от требований DNS провайдера.

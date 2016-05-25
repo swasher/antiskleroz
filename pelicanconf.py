@@ -11,10 +11,10 @@ SITENAME = 'Antiskleroz'
 #SITEURL = 'http://antiskleroz.pp.ua'
 SITEURL = ''
 
-CACHE_CONTENT = True
-LOAD_CONTENT_CACHE = True
-CHECK_MODIFIED_METHOD = 'mtime'
-CONTENT_CACHING_LAYER = 'generator'
+#CACHE_CONTENT = True
+#LOAD_CONTENT_CACHE = True
+#CHECK_MODIFIED_METHOD = 'mtime'
+#CONTENT_CACHING_LAYER = 'generator'
 
 PATH = 'content'
 
@@ -26,6 +26,7 @@ STATIC_PATHS = ['images',
 
 EXTRA_PATH_METADATA = {
     'extra/google4b275ebfe0f55969.html': {'path': 'google4b275ebfe0f55969.html' },
+    'extra/_headers': {'path': '_headers' },
     'extra/.netlify': {'path': '.netlify'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
 }
@@ -48,6 +49,8 @@ SLUGIFY_SOURCE = 'basename'
 # URL SETTINGS  http://docs.getpelican.com/en/3.6.3/settings.html#url-settings
 ############################################################################
 
+ARTICLE_URL = '{category}/{slug}.html'
+ARTICLE_SAVE_AS = '{category}/{slug}.html'
 TIMEZONE = 'Europe/Kiev'
 
 
