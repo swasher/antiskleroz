@@ -34,7 +34,11 @@ In progress
 #### [Darkest Dungeon](http://www.darkestdungeon.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453802741/games/darkest_dungeon.jpg %}
 
+#### [Goliath](http://www.goliath-game.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464285041/games/goliath.jpg %}
 
+Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
+на работе пошпилить.
 
 Planned
 ==========================
@@ -168,3 +172,9 @@ Rejected
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453716835/games/unmechanical.jpg %}
 
 Это пипец!!! Какия интересная игра и какое тупое управление, делающее невозможным прохождение. Плюнул, пустая трата времни бороться с этим.
+
+
+#### [Redcon](http://www.hexage.net/redcon/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464284414/games/redcon.jpg %}
+
+Толковая игруля типа tower-defence, но меня как-то не проняло.

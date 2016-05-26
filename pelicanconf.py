@@ -89,9 +89,9 @@ GOOGLE_ANALYTICS = 'UA-3525597-4'
 GOOGLE_SEARCH_ID = '013151284164154536357:cc1m6ctrcro'
 
 LINKS =  (
-            ('Rtorrent', 'ustanovka-i-nastroika-rtorrent-rutorrent.html'),
-            ('Linux commands', 'linux-commands.html'),
-            ('Bacula', 'bacula.html'),
+            ('Rtorrent', 'it/ustanovka-i-nastroika-rtorrent-rutorrent.html'),
+            ('Linux commands', 'it/linux-commands.html'),
+            ('Bacula', 'it/bacula.html'),
          )
 
 SOCIAL = (
