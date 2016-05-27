@@ -162,11 +162,13 @@ Rejected
 Без перевода, - вроде и слешер, а без понятной истории не интересно.
 
 #### [Inquisitor](http://inquisitor-rpg.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464340365/games/inquisitor.jpg %}
 
-Олдскульная рпг 2012 года... Чрезмерно олдскульная.
+Олдскульная рпг 2012 года... Крутая, но уж чрезмерно олдскульная.
 
 #### [Magicka 2](http://store.steampowered.com/app/238370/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846497/games/Magicka-2.jpg %}
+
 
 #### [Dragon Age: Inquisition](http://kanobu.ru/games/dragon-age-inquisition/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908320/games/DragonAgeInquisition.jpg %}
