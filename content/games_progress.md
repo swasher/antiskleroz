@@ -11,8 +11,7 @@ In progress
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
 
-**With DLC:**
-
+    With DLC:
     - The Forsaken - Challenge Map
     - The Bank Heist
     - Opportunist
@@ -40,65 +39,71 @@ In progress
 Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
 на работе пошпилить.
 
-Planned
-==========================
-
-#### [Fallout 4](https://www.fallout4.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
-
-#### [Wasteland](http://www.playground.ru/games/wasteland_2/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972515/games/wasteland-2-banner.jpg %}
-
-#### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
-
-#### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
-
-#### [Divinity: Original Sin](http://www.playground.ru/games/divinity_original_sin/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972402/games/Divinity_Original_Sin.jpg %}
-
 #### [Fire](http://www.playground.ru/games/fire/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1429806944/games/fire.jpg  500 %}
 
-#### [Whispering Willows](http://nightlightinteractive.com/whisperingwillows/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430235767/games/whispering_willows.png %}
 
-#### [Solarix](http://www.playground.ru/games/solarix/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
-
-#### [The Evil Within](http://theevilwithin.com/ru)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636789/games/The-Evil-Within-Banner.jpg %}
-
-#### [Murdered Soul Suspect](http://murdered.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430638024/games/murdered-soul-suspect.png %}
-
-#### [Dungeons 2](http://gameguru.ru/games/dungeons_2/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430662822/games/Dungeons-2.jpg %}
-
-#### [The Raven: Legacy of a Master Thief](http://kanobu.ru/articles/the-raven-legacy-of-a-master-thief-365897/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717366/games/the_raven.jpg %}
-
-#### [Zombi (Ubisoft)](https://www.ubisoft.com/ru-RU/game/zombi/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
+Planned
+==========================
 
 #### [Cradle](http://www.playground.ru/games/cradle/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972922/games/Cradle.jpg %}
 
-#### [Lords Of The Fallen](http://kanobu.ru/articles/retsenziya-na-lords-of-the-fallen-368605/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973113/games/Lord_of_Fallen.jpg %}
+#### [Divinity: Original Sin](http://www.playground.ru/games/divinity_original_sin/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972402/games/Divinity_Original_Sin.jpg %}
+
+#### [Dungeons 2](http://gameguru.ru/games/dungeons_2/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430662822/games/Dungeons-2.jpg %}
+
+#### [Fallout 4](https://www.fallout4.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
 
 #### [Invisible, Inc.](http://kanobu.ru/articles/retsenziya-na-invisible-inc-369009/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973203/games/invisible-inc-banner.png %}
 
+#### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
+
+#### [Lords Of The Fallen](http://kanobu.ru/articles/retsenziya-na-lords-of-the-fallen-368605/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973113/games/Lord_of_Fallen.jpg %}
+
+#### [Murdered Soul Suspect](http://murdered.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430638024/games/murdered-soul-suspect.png %}
+
+#### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
+
+#### [Solarix](http://www.playground.ru/games/solarix/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
+
 #### [Stasis (by Daedalic)](http://stasisgame.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1441067853/games/stasis.jpg %}
+
+#### [Stellaris](https://www.paradoxplaza.com/stellaris)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464334632/games/Stellaris.jpg %}
 
 #### [Sword Coast Legends](https://swordcoast.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1445701490/games/sword_coast_legends.jpg %}
 
+#### [The Evil Within](http://theevilwithin.com/ru)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636789/games/The-Evil-Within-Banner.jpg %}
+
+#### [The Raven: Legacy of a Master Thief](http://kanobu.ru/articles/the-raven-legacy-of-a-master-thief-365897/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717366/games/the_raven.jpg %}
+
 #### [Under Rail](http://www.underrail.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1454489796/games/UnderRail.jpg %}
+
+#### [Wasteland](http://www.playground.ru/games/wasteland_2/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972515/games/wasteland-2-banner.jpg %}
+
+#### [Whispering Willows](http://nightlightinteractive.com/whisperingwillows/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430235767/games/whispering_willows.png %}
+
+#### [Zombi (Ubisoft)](https://www.ubisoft.com/ru-RU/game/zombi/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
+
+
 
 Done
 ==========================
