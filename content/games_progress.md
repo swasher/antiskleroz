@@ -145,6 +145,12 @@ Done
 #### [Siberia I, Siberia II](https://ru.wikipedia.org/wiki/Syberia)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1454491941/games/siberia.jpg %}
 
+#### [Master of orion \[1993\]](https://en.wikipedia.org/wiki/Master_of_Orion)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/v1464354675/games/Master_of_Orion_cover.jpg %}
+
+#### [Master of orion: Conquer the stars \[2016\] Early access](http://masteroforion.eu/intro)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464353967/games/master-of-orion.jpg %}
+
 
 
 Rejected
