@@ -67,11 +67,17 @@ Planned
 #### [Lords Of The Fallen](http://kanobu.ru/articles/retsenziya-na-lords-of-the-fallen-368605/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973113/games/Lord_of_Fallen.jpg %}
 
+#### [Lumo](http://kanobu.ru/games/lumo/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464366713/games/Lumo.png %}
+
 #### [Murdered Soul Suspect](http://murdered.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430638024/games/murdered-soul-suspect.png %}
 
 #### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
+
+#### [Shadwen](https://www.shadwen.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464365033/games/shadwen.jpg %}
 
 #### [Solarix](http://www.playground.ru/games/solarix/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
