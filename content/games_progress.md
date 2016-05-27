@@ -42,9 +42,12 @@ In progress
 #### [Fire](http://www.playground.ru/games/fire/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1429806944/games/fire.jpg  500 %}
 
+# =========================================================
 
 Planned
 ==========================
+
+# =========================================================
 
 #### [Cradle](http://www.playground.ru/games/cradle/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972922/games/Cradle.jpg %}
