@@ -4,10 +4,8 @@ Tags: games
 Category: Games
 Author: Swasher
 
-# ==============================================
-In progress
-==========================
-# ==============================================
+----====>>> IN PROGRESS <<<====----
+===================================
 
 
 #### [Thief 4](http://thief-four.com/)
@@ -41,10 +39,8 @@ In progress
 Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
 на работе пошпилить.
 
-# ==============================================
-Planned
-==========================
-# ==============================================
+----====>>> PLANNED <<<====----
+===============================
 
 #### [Cradle](http://www.playground.ru/games/cradle/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972922/games/Cradle.jpg %}
@@ -110,10 +106,10 @@ Planned
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
 
 
-# ==============================================
-Done
-==========================
-# ==============================================
+
+----====>>> DONE <<<====----
+===========================
+
 
 #### [Botanicula](http://kanobu.ru/games/botanicula-1/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1448874890/games/botanicula.png %}
@@ -160,10 +156,8 @@ Done
 #### [The Room](http://www.fireproofgames.com/games/the-room)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846952/games/theroom.jpg %}
 
-# ==============================================
-Rejected
-==========================
-# ==============================================
+----====>>> REJECTED <<<====----
+================================
 
 
 #### [Dragon Age: Inquisition](http://kanobu.ru/games/dragon-age-inquisition/)
