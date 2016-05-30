@@ -4,9 +4,11 @@ Tags: games
 Category: Games
 Author: Swasher
 
-----====>>> IN PROGRESS <<<====----
+---===>>> IN PROGRESS <<<===---
 ===================================
 
+#### [Dead Effect 2](http://deadeffect2.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464594640/games/dead_effect2.jpg %}
 
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
@@ -39,7 +41,7 @@ Author: Swasher
 Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
 на работе пошпилить.
 
-----====>>> PLANNED <<<====----
+---===>>> PLANNED <<<===---
 ===============================
 
 #### [Cradle](http://www.playground.ru/games/cradle/)
@@ -107,7 +109,7 @@ Author: Swasher
 
 
 
-----====>>> DONE <<<====----
+---===>>> DONE <<<===---
 ===========================
 
 
@@ -122,7 +124,13 @@ Author: Swasher
 #### [Dragon Age II](http://kanobu.ru/games/dragon-age-2/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908388/games/DragonAge-2.jpg %}
 
-#### [Fallout 3](http://ru.fallout.wikia.com/wiki/Fallout_3)
+#### [Fallout 1 \[1997\]](http://kanobu.ru/games/fallout-a-post-nuclear-role-play-game/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464595289/games/fallout1.jpg %}
+
+#### [Fallout 2 \[1998\]](http://kanobu.ru/games/fallout-2/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464595249/games/fallout2.jpg %}
+
+#### [Fallout 3 \[2008\]](http://ru.fallout.wikia.com/wiki/Fallout_3)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717645/games/Fallout_3_GotY.jpg %}
 
     With DLC:
@@ -156,7 +164,7 @@ Author: Swasher
 #### [The Room](http://www.fireproofgames.com/games/the-room)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846952/games/theroom.jpg %}
 
-----====>>> REJECTED <<<====----
+---===>>> REJECTED <<<===---
 ================================
 
 
