@@ -4,9 +4,11 @@ Tags: games
 Category: Games
 Author: Swasher
 
-
+# ==============================================
 In progress
 ==========================
+# ==============================================
+
 
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
@@ -39,15 +41,10 @@ In progress
 Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
 на работе пошпилить.
 
-#### [Fire](http://www.playground.ru/games/fire/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1429806944/games/fire.jpg  500 %}
-
-# =========================================================
-
+# ==============================================
 Planned
 ==========================
-
-# =========================================================
+# ==============================================
 
 #### [Cradle](http://www.playground.ru/games/cradle/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972922/games/Cradle.jpg %}
@@ -113,20 +110,46 @@ Planned
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
 
 
-
+# ==============================================
 Done
 ==========================
+# ==============================================
+
+#### [Botanicula](http://kanobu.ru/games/botanicula-1/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1448874890/games/botanicula.png %}
+
+#### [Dragon Age: Origins](http://kanobu.ru/games/dragon-age-origins/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908191/games/dragon-age-origins.jpg %}
+
+    With Dragon Age: Origins – Awakening
+
+#### [Dragon Age II](http://kanobu.ru/games/dragon-age-2/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908388/games/DragonAge-2.jpg %}
 
 #### [Fallout 3](http://ru.fallout.wikia.com/wiki/Fallout_3)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717645/games/Fallout_3_GotY.jpg %}
 
-**With DLC:**
-
-    - Operation: Anchorage 
+    With DLC:
+    - Operation: Anchorage
     - The Pitt 
     - Broken Steel 
     - Point Lookout 
     - Mothership Zeta
+
+#### [Fire](http://www.playground.ru/games/fire/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1429806944/games/fire.jpg  500 %}
+
+#### [Machinarium](http://kanobu.ru/games/mashinarium/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917309/games/machinarium.png %}
+
+#### [Master of orion \[1993\]](https://en.wikipedia.org/wiki/Master_of_Orion)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/v1464354675/games/Master_of_Orion_cover.jpg %}
+
+#### [Master of orion: Conquer the stars \[2016\] Early access](http://masteroforion.eu/intro)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464353967/games/master-of-orion.jpg %}
+
+#### [Siberia I, Siberia II](https://ru.wikipedia.org/wiki/Syberia)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1454491941/games/siberia.jpg %}
 
 #### [The Incredible Adventures of Van Helsing](http://stopgame.ru/review/incredible_adventures_of_van_helsing/review.html)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440655389/games/van-helsing.jpg %}
@@ -137,44 +160,16 @@ Done
 #### [The Room](http://www.fireproofgames.com/games/the-room)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846952/games/theroom.jpg %}
 
-#### [Dragon Age: Origins](http://kanobu.ru/games/dragon-age-origins/)
-{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908191/games/dragon-age-origins.jpg %}
-
-    > Dragon Age: Origins – Awakening
-
-#### [Dragon Age II](http://kanobu.ru/games/dragon-age-2/)
-{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908388/games/DragonAge-2.jpg %}
-
-#### [Machinarium](http://kanobu.ru/games/mashinarium/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917309/games/machinarium.png %}
-
-#### [Botanicula](http://kanobu.ru/games/botanicula-1/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1448874890/games/botanicula.png %}
-
-#### [Siberia I, Siberia II](https://ru.wikipedia.org/wiki/Syberia)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1454491941/games/siberia.jpg %}
-
-#### [Master of orion \[1993\]](https://en.wikipedia.org/wiki/Master_of_Orion)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/v1464354675/games/Master_of_Orion_cover.jpg %}
-
-#### [Master of orion: Conquer the stars \[2016\] Early access](http://masteroforion.eu/intro)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464353967/games/master-of-orion.jpg %}
-
-
-
+# ==============================================
 Rejected
 ==========================
+# ==============================================
 
-#### [Victor Vran](http://www.playground.ru/games/victor_vran/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439971573/games/Banner.png %}
 
-Хотя, может еще и поиграю... Неудобное управление, странные достижения (типа на время или без урона), но красивое, и, 
-как я люблю, с классным лутом :)
+#### [Dragon Age: Inquisition](http://kanobu.ru/games/dragon-age-inquisition/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908320/games/DragonAgeInquisition.jpg %}
 
-#### [The Incredible Adventures of Van Helsing III](http://www.3dnews.ru/915436)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444907576/games/Van-Helsing-III.jpg %}
-
-Без перевода, - вроде и слешер, а без понятной истории не интересно.
+тупая консольная беготня
 
 #### [Inquisitor](http://inquisitor-rpg.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464340365/games/inquisitor.jpg %}
@@ -184,19 +179,23 @@ Rejected
 #### [Magicka 2](http://store.steampowered.com/app/238370/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846497/games/Magicka-2.jpg %}
 
+#### [Redcon](http://www.hexage.net/redcon/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464284414/games/redcon.jpg %}
 
-#### [Dragon Age: Inquisition](http://kanobu.ru/games/dragon-age-inquisition/)
-{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908320/games/DragonAgeInquisition.jpg %}
+Толковая игруля типа tower-defence, но меня как-то не проняло.
 
-тупая консольная беготня
+#### [The Incredible Adventures of Van Helsing III](http://www.3dnews.ru/915436)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444907576/games/Van-Helsing-III.jpg %}
+
+Без перевода, - вроде и слешер, а без понятной истории не интересно.
 
 #### [Unmechanical](http://unmechanical.net/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453716835/games/unmechanical.jpg %}
 
 Это пипец!!! Какия интересная игра и какое тупое управление, делающее невозможным прохождение. Плюнул, пустая трата времни бороться с этим.
 
+#### [Victor Vran](http://www.playground.ru/games/victor_vran/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439971573/games/Banner.png %}
 
-#### [Redcon](http://www.hexage.net/redcon/)
-{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464284414/games/redcon.jpg %}
-
-Толковая игруля типа tower-defence, но меня как-то не проняло.
+Хотя, может еще и поиграю... Неудобное управление, странные достижения (типа на время или без урона), но красивое, и,
+как я люблю, с классным лутом :)
