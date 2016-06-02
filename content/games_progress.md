@@ -1,7 +1,7 @@
 Title: Games progress
 Date: 2015-03-28 17:53
 Tags: games
-Category: Games
+Category: Private
 Author: Swasher
 
 ---===>>> IN PROGRESS <<<===---
@@ -9,6 +9,30 @@ Author: Swasher
 
 #### [Dead Effect 2](http://deadeffect2.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464594640/games/dead_effect2.jpg %}
+
+#### [Deathtrap](http://kanobu.ru/games/deathtrap/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
+
+#### [Darkest Dungeon](http://www.darkestdungeon.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453802741/games/darkest_dungeon.jpg %}
+
+#### [Evil Defenders](http://www.evildefenders.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464873283/games/evil_defenders.jpg %}
+
+#### [Fallout New Vegas](http://www.playground.ru/games/fallout_new_vegas/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972451/games/fallout-new-vegas-banner.jpg %}
+
+#### [Goliath](http://www.goliath-game.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464285041/games/goliath.jpg %}
+
+Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
+на работе пошпилить.
+
+#### [Ori and the Blind Forest](http://kanobu.ru/games/ori-and-blind-forest/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717865/games/Ori_and_the_Blind_Forest.png.png %}
+
+#### [The Talos Principle](http://www.3dnews.ru/907213)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1431001518/games/the-talos-principle.jpg %}
 
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
@@ -19,27 +43,6 @@ Author: Swasher
     - Opportunist
     - Predator
     - Ghost
-
-#### [The Talos Principle](http://www.3dnews.ru/907213)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1431001518/games/the-talos-principle.jpg %}
-
-#### [Ori and the Blind Forest](http://kanobu.ru/games/ori-and-blind-forest/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717865/games/Ori_and_the_Blind_Forest.png.png %}
-
-#### [Fallout New Vegas](http://www.playground.ru/games/fallout_new_vegas/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972451/games/fallout-new-vegas-banner.jpg %}
-
-#### [Deathtrap](http://kanobu.ru/games/deathtrap/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
-
-#### [Darkest Dungeon](http://www.darkestdungeon.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453802741/games/darkest_dungeon.jpg %}
-
-#### [Goliath](http://www.goliath-game.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464285041/games/goliath.jpg %}
-
-Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
-на работе пошпилить.
 
 ---===>>> PLANNED <<<===---
 ===============================
@@ -55,9 +58,6 @@ Author: Swasher
 
 #### [Fallout 4](https://www.fallout4.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
-
-#### [Invisible, Inc.](http://kanobu.ru/articles/retsenziya-na-invisible-inc-369009/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973203/games/invisible-inc-banner.png %}
 
 #### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
@@ -177,6 +177,11 @@ Author: Swasher
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464340365/games/inquisitor.jpg %}
 
 Олдскульная рпг 2012 года... Крутая, но уж чрезмерно олдскульная.
+
+#### [Invisible, Inc.](http://kanobu.ru/articles/retsenziya-na-invisible-inc-369009/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973203/games/invisible-inc-banner.png %}
+
+Стер на второй день. Сложная что ппц, однообразная, и невозможно прогнозировать последствия выбора.
 
 #### [Magicka 2](http://store.steampowered.com/app/238370/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846497/games/Magicka-2.jpg %}
