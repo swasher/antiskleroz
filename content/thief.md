@@ -87,25 +87,24 @@ None
 
 **Глава 1: Блокада** *(Chapter 1: Lockdown)*
 
-{% img lb-image /images/thief/Chapter_1_Blokada.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878110/games/Chapter_1_Lockdown.png %}
 
 **Глава 2: Прах к праху** *(Chapter 2: Dust_to_Dust)*
 
-{% img lb-image /images/thief/Chapter_2_Dust_to_Dust.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878157/games/Chapter_2_Dust_to_Dust.png %}
 
 **Глава 3: Грязные тайны** *(Chapter 3: Dirty secrets)*
 
-{% img lb-image /images/thief/Chapter_3_Dirty_secrets.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878179/games/Chapter_3_Dirty_secrets.png %}
 
 
 ####Сайд квесты
 
 **Виттори: Золотая середина** *(Vittory: Happy Medium)*
-{% img lb-image /images/thief/Vittory_1-Zolotaya_Seredina-Happy_Medium.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878241/games/Vittory_1-Zolotaya_Seredina-Happy_Medium.png %}
 
 **Эктор: Ручная работа** *(Ector: Hand Tailored)*
-{% img lb-image /images/thief/Ector_1_Ruchnaya_Rabota-Hand_Tailored.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878205/games/Ector_1_Ruchnaya_Rabota-Hand_Tailored.png %}
 
 **Ограбление банка** *(Bank Heist)*
-
-{% img lb-image /images/thief/Bank_Heist.png 750 %}
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878266/games/Bank_Heist.png %}
