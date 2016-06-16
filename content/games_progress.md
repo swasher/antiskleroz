@@ -7,26 +7,11 @@ Author: Swasher
 ---===>>> IN PROGRESS <<<===---
 ===================================
 
-#### [Dead Effect 2](http://deadeffect2.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464594640/games/dead_effect2.jpg %}
-
 #### [Deathtrap](http://kanobu.ru/games/deathtrap/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
 
 #### [Darkest Dungeon](http://www.darkestdungeon.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453802741/games/darkest_dungeon.jpg %}
-
-#### [Evil Defenders](http://www.evildefenders.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464873283/games/evil_defenders.jpg %}
-
-#### [Fallout New Vegas](http://www.playground.ru/games/fallout_new_vegas/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972451/games/fallout-new-vegas-banner.jpg %}
-
-#### [Goliath](http://www.goliath-game.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464285041/games/goliath.jpg %}
-
-Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
-на работе пошпилить.
 
 #### [Ori and the Blind Forest](http://kanobu.ru/games/ori-and-blind-forest/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717865/games/Ori_and_the_Blind_Forest.png.png %}
@@ -37,7 +22,7 @@ Author: Swasher
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
 
-    With DLC:
+    With DLCs:
     - The Forsaken - Challenge Map
     - The Bank Heist
     - Opportunist
@@ -59,6 +44,9 @@ Author: Swasher
 #### [Fallout 4](https://www.fallout4.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
 
+#### [Hero Defence](http://hero-defense.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1466099045/games/hero_defence.jpg %}
+
 #### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
 
@@ -79,6 +67,9 @@ Author: Swasher
 
 #### [Solarix](http://www.playground.ru/games/solarix/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
+
+#### [Solus Project](http://www.thesolusproject.com/)
+{% img  image http://res.cloudinary.com/swasher/image/upload/v1466099235/games/solus_project.jpg %}
 
 #### [Stasis (by Daedalic)](http://stasisgame.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1441067853/games/stasis.jpg %}
@@ -116,6 +107,9 @@ Author: Swasher
 #### [Botanicula](http://kanobu.ru/games/botanicula-1/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1448874890/games/botanicula.png %}
 
+#### [Dead Effect 2](http://deadeffect2.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464594640/games/dead_effect2.jpg %}
+
 #### [Dragon Age: Origins](http://kanobu.ru/games/dragon-age-origins/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908191/games/dragon-age-origins.jpg %}
 
@@ -123,6 +117,9 @@ Author: Swasher
 
 #### [Dragon Age II](http://kanobu.ru/games/dragon-age-2/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908388/games/DragonAge-2.jpg %}
+
+#### [Evil Defenders](http://www.evildefenders.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464873283/games/evil_defenders.jpg %}
 
 #### [Fallout 1 \[1997\]](http://kanobu.ru/games/fallout-a-post-nuclear-role-play-game/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464595289/games/fallout1.jpg %}
@@ -133,12 +130,21 @@ Author: Swasher
 #### [Fallout 3 \[2008\]](http://ru.fallout.wikia.com/wiki/Fallout_3)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717645/games/Fallout_3_GotY.jpg %}
 
-    With DLC:
+    With DLCs:
     - Operation: Anchorage
     - The Pitt 
     - Broken Steel 
     - Point Lookout 
     - Mothership Zeta
+
+#### [Fallout New Vegas](http://www.playground.ru/games/fallout_new_vegas/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972451/games/fallout-new-vegas-banner.jpg %}
+
+    With DLCs:
+    - Dead Money
+    - Honest Hearts
+    - Old World Blues
+    - Lonesome Road-
 
 #### [Fire](http://www.playground.ru/games/fire/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1429806944/games/fire.jpg  500 %}
@@ -172,6 +178,12 @@ Author: Swasher
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908320/games/DragonAgeInquisition.jpg %}
 
 тупая консольная беготня
+
+#### [Goliath](http://www.goliath-game.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464285041/games/goliath.jpg %}
+
+Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
+на работе пошпилить. UPD: не зацепило, нудно
 
 #### [Inquisitor](http://inquisitor-rpg.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464340365/games/inquisitor.jpg %}

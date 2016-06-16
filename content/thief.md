@@ -97,6 +97,17 @@ None
 
 {% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1464878179/games/Chapter_3_Dirty_secrets.png %}
 
+**Глава 4: Друг в беде** *(Chapter 4: A Friend in Need)*
+
+{% img lb-image http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1465069201/games/Chapter_4_A_friend_in_need.png %}
+
+**Глава 5: Отверженные** *(Chapter 5: The Forsaken)*
+
+{% img lb-image  %}
+
+**Глава 6: Одиночка** *(Chapter 6: A Man Apart)*
+
+{% img lb-image  %}
 
 ####Сайд квесты
 
