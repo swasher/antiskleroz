@@ -11,6 +11,7 @@
 /output
 
 *.pyc
+*.log
 __pycache__/
 .idea/
 .vagrant/

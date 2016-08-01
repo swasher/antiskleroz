@@ -44,17 +44,11 @@ Author: Swasher
 #### [Fallout 4](https://www.fallout4.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
 
-#### [Hero Defence](http://hero-defense.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1466099045/games/hero_defence.jpg %}
-
 #### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
 
 #### [Lords Of The Fallen](http://kanobu.ru/articles/retsenziya-na-lords-of-the-fallen-368605/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439973113/games/Lord_of_Fallen.jpg %}
-
-#### [Lumo](http://kanobu.ru/games/lumo/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464366713/games/Lumo.png %}
 
 #### [Murdered Soul Suspect](http://murdered.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430638024/games/murdered-soul-suspect.png %}
@@ -185,6 +179,11 @@ Author: Swasher
 Посмотрю еще, вроде интресная игруля, крафт, но как-то много беготни на еденицу игрового времени. Можно попробовать
 на работе пошпилить. UPD: не зацепило, нудно
 
+#### [Hero Defence](http://hero-defense.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1466099045/games/hero_defence.jpg %}
+
+не понравилось
+
 #### [Inquisitor](http://inquisitor-rpg.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464340365/games/inquisitor.jpg %}
 
@@ -195,6 +194,9 @@ Author: Swasher
 
 Стер на второй день. Сложная что ппц, однообразная, и невозможно прогнозировать последствия выбора.
 
+#### [Lumo](http://kanobu.ru/games/lumo/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464366713/games/Lumo.png %}
+
 #### [Magicka 2](http://store.steampowered.com/app/238370/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846497/games/Magicka-2.jpg %}
 
@@ -202,6 +204,9 @@ Author: Swasher
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464284414/games/redcon.jpg %}
 
 Толковая игруля типа tower-defence, но меня как-то не проняло.
+
+#### [Steamworld Heist](http://kanobu.ru/games/steamworld-heist/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1466611196/games/SteamWorld_Heist.png %}
 
 #### [The Incredible Adventures of Van Helsing III](http://www.3dnews.ru/915436)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444907576/games/Van-Helsing-III.jpg %}

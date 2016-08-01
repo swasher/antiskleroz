@@ -38,6 +38,12 @@ m - это итератор, объект типа `<class 'map'>`. Его мо�
 Рецепты
 =========================================
 
+### Рыба
+
+    ::python
+    import random
+    words = "lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et".split()
+    " ".join([random.choice(words) for i in range(1000)])
 
 ### Форматирование с помощью словаря
 
