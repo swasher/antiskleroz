@@ -7,6 +7,9 @@ Author: Swasher
 ---===>>> IN PROGRESS <<<===---
 ===================================
 
+#### [Alpha polaris](http://www.ag.ru/games/alpha-polaris)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470510189/games/alpha_polaris.jpg %}
+
 #### [Deathtrap](http://kanobu.ru/games/deathtrap/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
 
@@ -28,6 +31,12 @@ Author: Swasher
     - Opportunist
     - Predator
     - Ghost
+    
+#### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
+
+    Done.
+    Now run White March I and II
 
 ---===>>> PLANNED <<<===---
 ===============================
@@ -53,17 +62,11 @@ Author: Swasher
 #### [Murdered Soul Suspect](http://murdered.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430638024/games/murdered-soul-suspect.png %}
 
-#### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
-
 #### [Shadwen](https://www.shadwen.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464365033/games/shadwen.jpg %}
 
 #### [Solarix](http://www.playground.ru/games/solarix/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
-
-#### [Solus Project](http://www.thesolusproject.com/)
-{% img  image http://res.cloudinary.com/swasher/image/upload/v1466099235/games/solus_project.jpg %}
 
 #### [Stasis (by Daedalic)](http://stasisgame.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1441067853/games/stasis.jpg %}
@@ -167,6 +170,16 @@ Author: Swasher
 ---===>>> REJECTED <<<===---
 ================================
 
+#### [Life is strange](http://kanobu.ru/games/life-strange/)
+{% img  image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920296/games/Life-is-Strange.png %}
+
+Не понравился подростковый сеттинг. Перспектива вникать в их школьные разногласия отбила желание играть.
+
+#### [Starbound](http://playstarbound.com/)
+{% img  image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470168921/games/starbound.jpg %}
+
+#### [Solus Project](http://www.thesolusproject.com/)
+{% img  image http://res.cloudinary.com/swasher/image/upload/v1466099235/games/solus_project.jpg %}
 
 #### [Dragon Age: Inquisition](http://kanobu.ru/games/dragon-age-inquisition/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908320/games/DragonAgeInquisition.jpg %}

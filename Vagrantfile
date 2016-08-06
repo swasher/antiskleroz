@@ -7,13 +7,13 @@ user = 'ubuntu'
 
 Vagrant.configure(2) do |config|
 
-  # native ubuntu/x
-  #config.vm.box = "ubuntu/xenial64"
-  config.vm.box = "ubuntu/wily64"
-  #config.vm.box = "gbarbieru/xenial"
-  #config.vm.box = "geerlingguy/ubuntu1604"
+  config.vm.box = "bento/ubuntu-16.04"
+  # config.vm.box = "ubuntu/xenial64"
+  # config.vm.box = "ubuntu/wily64"
+  # config.vm.box = "gbarbieru/xenial"
+  # config.vm.box = "geerlingguy/ubuntu1604"
   config.vm.network "private_network", ip: internal_ip
-  config.vm.hostname = "blog"
+  config.vm.hostname = project_name
 
   config.vm.provider :virtualbox do |v|
     v.name = project_name
@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update -q
     apt-get autoremove -y
-    apt-get install mc npm -y
+    apt-get install mc npm git -y
     apt-get install python3-venv python3-dev -y
     npm install -g bower
     usermod -aG vagrant www-data
@@ -49,3 +49,10 @@ Vagrant.configure(2) do |config|
   SHELL
 
 end
+
+# steps to add github key:
+# - create private github key at ~/.ssg/github
+# - chmod it to 600
+# - enable ssh-agent: eval "$(ssh-agent -s)"
+# - add key to agent: ssh-add ~/.ssh/github
+# - now you can git push origin master without password
