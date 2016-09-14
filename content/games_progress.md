@@ -7,9 +7,6 @@ Author: Swasher
 ---===>>> IN PROGRESS <<<===---
 ===================================
 
-#### [Alpha polaris](http://www.ag.ru/games/alpha-polaris)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470510189/games/alpha_polaris.jpg %}
-
 #### [Deathtrap](http://kanobu.ru/games/deathtrap/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
 
@@ -21,6 +18,11 @@ Author: Swasher
 
 #### [The Talos Principle](http://www.3dnews.ru/907213)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1431001518/games/the-talos-principle.jpg %}
+
+Done with three ends:
+- подняться и пройти 5 уровень (пробуждение в реальном мире)
+- пройти в Вечное Царство Элохима (вечно бродить в золотом саду на облаках)
+- собрать все звезды и пройти на 6 уровень (стать посланником Элохима)
 
 #### [Thief 4](http://thief-four.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
@@ -38,6 +40,9 @@ Author: Swasher
     Done.
     Now run White March I and II
 
+#### [Samorost 3](http://samorost3.net/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473155182/games/samorost3.jpg %}
+
 ---===>>> PLANNED <<<===---
 ===============================
 
@@ -49,6 +54,9 @@ Author: Swasher
 
 #### [Dungeons 2](http://gameguru.ru/games/dungeons_2/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430662822/games/Dungeons-2.jpg %}
+
+#### [Ember](http://store.steampowered.com/app/339580/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473881546/games/ember.jpg %}
 
 #### [Fallout 4](https://www.fallout4.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
@@ -83,6 +91,9 @@ Author: Swasher
 #### [The Raven: Legacy of a Master Thief](http://kanobu.ru/articles/the-raven-legacy-of-a-master-thief-365897/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717366/games/the_raven.jpg %}
 
+#### [The Witcher 3](http://thewitcher.com/en/witcher3)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470523156/games/the-witcher-3.png %}
+
 #### [Under Rail](http://www.underrail.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1454489796/games/UnderRail.jpg %}
 
@@ -92,6 +103,12 @@ Author: Swasher
 #### [Whispering Willows](http://nightlightinteractive.com/whisperingwillows/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430235767/games/whispering_willows.png %}
 
+
+
+
+#### [Whitcher 3: Wild Hunt (Ведьмак 3: Дикая охота)](http://nightlightinteractive.com/whisperingwillows/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577823/games/witcher3.jpg %}
+
 #### [Zombi (Ubisoft)](https://www.ubisoft.com/ru-RU/game/zombi/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
 
@@ -100,6 +117,10 @@ Author: Swasher
 ---===>>> DONE <<<===---
 ===========================
 
+#### [Alpha polaris](http://www.ag.ru/games/alpha-polaris)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470510189/games/alpha_polaris.jpg %}
+
+Закончил, но это один из самых тупых квестов, которые я видел.
 
 #### [Botanicula](http://kanobu.ru/games/botanicula-1/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1448874890/games/botanicula.png %}
@@ -167,8 +188,29 @@ Author: Swasher
 #### [The Room](http://www.fireproofgames.com/games/the-room)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444846952/games/theroom.jpg %}
 
+#### [Samorost](http://amanita-design.net/samorost-1/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473154985/games/somorsoft.jpg %}
+
+#### [Samorost 2](http://amanita-design.net/samorost-2/)
+{% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473155070/games/samorost2.jpg %}
+
+#### [Whitcher (Ведьмак)](http://nightlightinteractive.com/whisperingwillows/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577712/games/whitcher1.png %}
+
+#### [Witcher 2: Assassins of Kings (Ведьмак 2: Убийцы королей)](http://thewitcher.com/ru/witcher2)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577743/games/witcher2.jpg %}
+
+    Path by Rosche -> Done.
+    Path by Iorveth -> Planned.
+
 ---===>>> REJECTED <<<===---
 ================================
+
+#### [Mordheim: City of the Damned ](http://mordheim-cityofthedamned.com/en/game-intro)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470523383/games/mordheim-city-of-the-damned.jpg %}
+
+Сложная пошаговая стратегия с боями от третьего лица (не изометрия), для любителей жанра
+наверняка интресно, я не захотел сильно вникать.
 
 #### [Life is strange](http://kanobu.ru/games/life-strange/)
 {% img  image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920296/games/Life-is-Strange.png %}
@@ -226,10 +268,17 @@ Author: Swasher
 
 Без перевода, - вроде и слешер, а без понятной истории не интересно.
 
+#### [This Is the Police](https://games.mail.ru/pc/articles/secret/obschie_rassledovanija_this_is_the_police_by_igorexamail_ru_mail_ru/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1472474393/games/this_is_the_police.jpg %}
+
+Очень интересная задумка, но однообразный игровой процесс вкупе со слабой управляемостью происходящим
+охладили интерес.
+
 #### [Unmechanical](http://unmechanical.net/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453716835/games/unmechanical.jpg %}
 
-Это пипец!!! Какия интересная игра и какое тупое управление, делающее невозможным прохождение. Плюнул, пустая трата времни бороться с этим.
+Это пипец!!! Какия интересная игра и какое тупое управление, делающее невозможным прохождение.
+Прошел половину и плюнул, пустая трата времни бороться с этим.
 
 #### [Victor Vran](http://www.playground.ru/games/victor_vran/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439971573/games/Banner.png %}
