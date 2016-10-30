@@ -127,15 +127,58 @@ Author: Swasher
 этот совет — зафиксируйте (унифицируйте) для себя структуру каталогов всех ваших проектов и строго её придерживайтесь.
 
 Живой пример:
---site.ua
-  |--static
-  |--media
-  |--project (папка с проектом)
-     |--manage.py
-     |--project (папка с основным приложением)
-     |  |--settings.py
-     |  |--urls.py
-     |  |-- ...
-     |--app1
-     |--app2
-     |--...
+
+    --site.ua
+      |--static
+      |--media
+      |--project (папка с проектом)
+         |--manage.py
+         |--project (папка с основным приложением)
+         |  |--settings.py
+         |  |--urls.py
+         |  |-- ...
+         |--app1
+         |--app2
+         |--...
+
+## Добавить кнопку в админку, на страницу-список объектов
+
+    class ComponentAdmin(admin.ModelAdmin):
+
+        def button(self, obj):
+            return mark_safe('<input type="submit" value="Load properties" class="default" name="load_properties" />')
+
+        button.short_description = 'Action'
+        button.allow_tags = True
+
+        list_display=['name', 'button']
+
+## How to limit the queryset of an inline model in django admin
+
+Use the [get_queryset](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.get_queryset) method:
+
+    class BAdmin(admin.TabularInline):
+        ...
+
+        def get_queryset(self, request):
+            qs = super(BAdmin, self).get_queryset(request)
+            return qs.filter(user=request.user)
+
+## Как откатить назад последнюю миграцию?
+
+- Identify the migrations you want by ./manage.py showmigrations
+- Migrate to desired migration
+
+For example, if your last two migrations are:
+
+    0010_previous_migration
+    0011_migration_to_revert
+
+Then you would do:
+
+    ./manage.py migrate my_app 0010_previous_migration
+
+Then delete file `0011_migration_to_revert`
+
+Большинство миграций можно удачно вернуть назад. Однако, существуют такие действия
+с базами, которые нельзя "сделать наоборот", например, кастомные скрипты.

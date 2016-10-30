@@ -7,14 +7,14 @@ Author: Swasher
 ---===>>> IN PROGRESS <<<===---
 ===================================
 
-#### [Deathtrap](http://kanobu.ru/games/deathtrap/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
-
 #### [Darkest Dungeon](http://www.darkestdungeon.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1453802741/games/darkest_dungeon.jpg %}
 
-#### [Ori and the Blind Forest](http://kanobu.ru/games/ori-and-blind-forest/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717865/games/Ori_and_the_Blind_Forest.png.png %}
+#### [Doom 4](http://doom.com/ru/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1474270887/games/DOOM4.jpg %}
+
+#### [Fallout 4](https://www.fallout4.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
 
 #### [The Talos Principle](http://www.3dnews.ru/907213)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1431001518/games/the-talos-principle.jpg %}
@@ -24,16 +24,6 @@ Done with three ends:
 - пройти в Вечное Царство Элохима (вечно бродить в золотом саду на облаках)
 - собрать все звезды и пройти на 6 уровень (стать посланником Элохима)
 
-#### [Thief 4](http://thief-four.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
-
-    With DLCs:
-    - The Forsaken - Challenge Map
-    - The Bank Heist
-    - Opportunist
-    - Predator
-    - Ghost
-    
 #### [Pillars of Ethernity](http://www.playground.ru/games/pillars_of_eternity/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972484/games/Pillaer_of_Ethernity.jpg %}
 
@@ -42,6 +32,10 @@ Done with three ends:
 
 #### [Samorost 3](http://samorost3.net/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473155182/games/samorost3.jpg %}
+
+#### [Whitcher 3: Wild Hunt (Ведьмак 3: Дикая охота)](http://nightlightinteractive.com/whisperingwillows/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577823/games/witcher3.jpg %}
+
 
 ---===>>> PLANNED <<<===---
 ===============================
@@ -58,8 +52,7 @@ Done with three ends:
 #### [Ember](http://store.steampowered.com/app/339580/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473881546/games/ember.jpg %}
 
-#### [Fallout 4](https://www.fallout4.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972656/games/fallout4-banner1.jpg %}
+
 
 #### [King's Quest](https://games.mail.ru/pc/articles/review/king_s_quest/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1439972287/games/kings_quest.jpg %}
@@ -75,9 +68,6 @@ Done with three ends:
 
 #### [Solarix](http://www.playground.ru/games/solarix/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430636505/games/solarix-banner.jpg %}
-
-#### [Stasis (by Daedalic)](http://stasisgame.com/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1441067853/games/stasis.jpg %}
 
 #### [Stellaris](https://www.paradoxplaza.com/stellaris)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464334632/games/Stellaris.jpg %}
@@ -103,12 +93,6 @@ Done with three ends:
 #### [Whispering Willows](http://nightlightinteractive.com/whisperingwillows/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1430235767/games/whispering_willows.png %}
 
-
-
-
-#### [Whitcher 3: Wild Hunt (Ведьмак 3: Дикая охота)](http://nightlightinteractive.com/whisperingwillows/)
-{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577823/games/witcher3.jpg %}
-
 #### [Zombi (Ubisoft)](https://www.ubisoft.com/ru-RU/game/zombi/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1440843393/games/ZombiU.png %}
 
@@ -127,6 +111,9 @@ Done with three ends:
 
 #### [Dead Effect 2](http://deadeffect2.com/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1464594640/games/dead_effect2.jpg %}
+
+#### [Dishonored](https://dishonored.bethesda.net/ru)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432838004/games/dishonored.jpg %}
 
 #### [Dragon Age: Origins](http://kanobu.ru/games/dragon-age-origins/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444908191/games/dragon-age-origins.jpg %}
@@ -194,6 +181,16 @@ Done with three ends:
 #### [Samorost 2](http://amanita-design.net/samorost-2/)
 {% img image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1473155070/games/samorost2.jpg %}
 
+#### [Thief 4](http://thief-four.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1432920597/games/thief.jpg %}
+
+    With DLCs:
+    - The Forsaken - Challenge Map
+    - The Bank Heist
+    - Opportunist
+    - Predator
+    - Ghost
+
 #### [Whitcher (Ведьмак)](http://nightlightinteractive.com/whisperingwillows/)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470577712/games/whitcher1.png %}
 
@@ -205,6 +202,16 @@ Done with three ends:
 
 ---===>>> REJECTED <<<===---
 ================================
+
+#### [Ori and the Blind Forest](http://kanobu.ru/games/ori-and-blind-forest/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1436717865/games/Ori_and_the_Blind_Forest.png.png %}
+
+Прошел большую часть и забросил
+
+#### [Deathtrap](http://kanobu.ru/games/deathtrap/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1444917180/games/Deathrap.jpg %}
+
+Прошел большую часть и забросил
 
 #### [Mordheim: City of the Damned ](http://mordheim-cityofthedamned.com/en/game-intro)
 {% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470523383/games/mordheim-city-of-the-damned.jpg %}
@@ -219,6 +226,11 @@ Done with three ends:
 
 #### [Starbound](http://playstarbound.com/)
 {% img  image http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1470168921/games/starbound.jpg %}
+
+#### [Stasis (by Daedalic)](http://stasisgame.com/)
+{% img  image  http://res.cloudinary.com/swasher/image/upload/c_scale,w_500/v1441067853/games/stasis.jpg %}
+
+Нудотнейший геймплей
 
 #### [Solus Project](http://www.thesolusproject.com/)
 {% img  image http://res.cloudinary.com/swasher/image/upload/v1466099235/games/solus_project.jpg %}

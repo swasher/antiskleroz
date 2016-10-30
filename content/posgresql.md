@@ -54,4 +54,56 @@ Where,
 -U vivek : Connect to the database as the vivek username instead of the default. You must have account and permission to connect as vivek user.
 -d sales : Specifies the name of the database (sales) to connect to.
 
+Get DB owner's name in PostgreSql
+====================================
+
+You can use the combination of pg_database, pg_users system tables and current_database() function in this way:
+
+    ::sql
+    SELECT u.usename
+    FROM pg_database d
+        JOIN pg_user u ON (d.datdba = u.usesysid)
+    WHERE d.datname = (SELECT current_database());
+
+Drop DB
+====================================
+
+Login (-h localhost is important)
+
+    $ psql -h localhost -U postgres
+
+Dropdb
+
+    postgres=# DROP DATABASE mydbname;
+
+May be this line in pg_hba.conf will help:
+
+    local   mydbname     postgres                             trust
+
+Create DB
+====================================
+
+    $ createdb --username=postgres --owner=swasher --host=localhost mydbname
+
+OR
+
+    postgres=# CREATE DATABASE mydbname;
+
+After create DB, if we want work from another as `postgres` user, we need grant permission to our user:
+
+    $ psql -U postgres mydbname -c "GRANT ALL ON ALL TABLES IN SCHEMA public to user;"
+    $ psql -U postgres mydbname -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public to user;"
+    $ psql -U postgres mydbname -c "GRANT ALL ON ALL FUNCTIONS IN SCHEMA public to user;"
+
+Create extension
+====================================
+
+    $ psql -U postgres -d mydbname -c 'create extension hstore;'
+
+OR in sql console
+
+    postgres=# \connect mydbname;
+    postgres=# CREATE EXTENSION hstore;
+
+
 

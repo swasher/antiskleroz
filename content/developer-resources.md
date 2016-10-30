@@ -126,7 +126,7 @@ Python
 PaaS
 ----------------------
 
-- [heroku](https://www.heroku.com/) - Heroku одно из немногих мест, где действительно бесплатнои качественно можно развернуть django-приложение.
+- [heroku](https://www.heroku.com/) - Heroku одно из немногих мест, где действительно бесплатно и качественно можно развернуть django-приложение.
 
 - [paasify.it](http://www.paasify.it/) - подбор Paas по параметрам
 
@@ -143,3 +143,5 @@ PaaS
 -----------------------
 
 - [mailjet.com](https://www.mailjet.com/) - рассылка писем, множество фич. Free - 6000 emails/month
+
+- [mailgun.com](http://www.mailgun.com/) - The Email Service For Developers. Free - 10k emails/month
