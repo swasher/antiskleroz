@@ -182,3 +182,29 @@ Then delete file `0011_migration_to_revert`
 
 Большинство миграций можно удачно вернуть назад. Однако, существуют такие действия
 с базами, которые нельзя "сделать наоборот", например, кастомные скрипты.
+
+## Tooltip in help text
+
+Found (here)[http://stackoverflow.com/a/35273389/1334825]
+
+    ::html
+    my_strange_field = models.FloatField('strange parameter', validators=[MinValueValidator(1.0)],
+                                         help_text='corr. factor x >= 1 <img src="/static/admin/img/icon-unknown.svg" '
+                                                   'width="15" height="15" title="typical values:\n'
+                                                   'cow:\t2..3\ncat:\t5..7\ndog:\t11..15')
+                                                   
+## Изменение help_text "на лету"
+
+    ::python
+    class ComponentAdmin(admin.ModelAdmin):
+    
+        def get_form(self, request, obj=None, **kwargs):
+            form = super(ComponentAdmin, self).get_form(request, obj, **kwargs)
+    
+            buy_date = obj.purchase_date
+            month_of_warranty = obj.warranty
+    
+            end_of_warranty = add_months(buy_date, month_of_warranty)
+    
+            form.base_fields['warranty'].help_text = "End of warranty: {:%d %B %Y}".format(end_of_warranty)
+            return form
