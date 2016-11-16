@@ -95,6 +95,7 @@ LINKS =  (
          )
 
 SOCIAL = (
+            ('cloudinary', 'http://cloudinary.com/invites/lpov9zyyucivvxsnalc5/kr3rwdflbqw1kqfibbbq'),
             ('twitter', 'http://twitter.com/mr_swasher'),
             ('facebook', 'facebook.com/alexey.swasher'),
             ('vkontakte', 'http://vk.com/mr.swasher'),
