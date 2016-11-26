@@ -1,4 +1,5 @@
 /games/*
+/private/*
 /category/games/*
 /category/private/*
   Basic-Auth: antiskleroz:antiskleroz

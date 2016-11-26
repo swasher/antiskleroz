@@ -271,7 +271,15 @@ match ищет паттерн только в начале строки, в то
                                                tm_hour=0, tm_min=0, tm_sec=0, \
                                                tm_wday=4, tm_yday=30, tm_isdst=-1)
     
-*struct -> datetime*
+*struc -> datetime*
+
+    ::python
+    >>> from datetime import datetime
+    >>> time_tuple = (2012, 10, 7, 15, 0, 0, 0, 1, -1)
+    >>> dt_obj = datetime(*time_tuple[0:7])
+
+    
+*string -> datetime*
 
     ::python
     >>> from datetime import datetime
