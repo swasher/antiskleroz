@@ -10,7 +10,7 @@ Author: Swasher
     
 Далее, создаем новое подключение к базе данных и настраиваем ssh-туннель:
 
-!(http://res.cloudinary.com/swasher/image/upload/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "SSH Tunnel")
+![](http://res.cloudinary.com/swasher/image/upload/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "SSH Tunnel")
 
 В этом окне настривается ssh-туннель от PyCharm к Vagrant. Так как Vagrant у нас
 локальный, то адрес - 127.0.0.1, порт - 2222, юзер - vagrant (если специально не 
@@ -20,12 +20,12 @@ Author: Swasher
 
 Далее настраиваем доступ к самой базе:
 
-!(http://res.cloudinary.com/swasher/image/upload/v1497733938/blog/Data_Sources_and_Drivers_2017-06-18_00.12.07.png "Postgres connect")
+![](http://res.cloudinary.com/swasher/image/upload/v1497733938/blog/Data_Sources_and_Drivers_2017-06-18_00.12.07.png "Postgres connect")
 
 Здесь IP - это внутренний IP контейнера, он должен быть доступен с нашего десктопа, проверяем пингом.
 Пользователь и пароль - от нашей базы данных.
 
 Когда все настроено, нажимаем "Test connection" для проверки соеденения.
 
-!(https://media.giphy.com/media/N2h8gg1FALgIM/giphy.gif)
+![](https://media.giphy.com/media/N2h8gg1FALgIM/giphy.gif)
 
