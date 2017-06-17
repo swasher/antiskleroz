@@ -84,6 +84,11 @@ LUN0 -> Storage - extent0(/dev/ada4) (The storage area mapped to LUN0.)
     Logging in to [iface: default, target: iqn.2012.nas4free:disk0, portal: 192.168.0.60,3260] (multiple)
     Login to [iface: default, target: iqn.2012.nas4free:disk0, portal: 192.168.0.60,3260] successful.
 
+Чтобы подключение выполнялось автоматически при загрузке, редактируем конфиг `/etc/iscsi/iscsid.conf`:
+
+    ::text
+    node.startup = automatic
+
 Смотрим вывод dmesg:
 
     ::text
@@ -109,7 +114,7 @@ LUN0 -> Storage - extent0(/dev/ada4) (The storage area mapped to LUN0.)
 Смотрим, что скажет fdisk:
 
     ::console
-    $ fdisk -l /dev/sdb
+    $ sudo fdisk -l /dev/sdb
 
     WARNING: GPT (GUID Partition Table) detected on '/dev/sdb'! The util fdisk doesn't support GPT. Use GNU Parted.
 
@@ -129,7 +134,7 @@ fdisk честно нас предупреждает, что для 3TB диск
 Тут я комментировать код не буду, ибо и так все очевидно
 
     ::console
-    $ parted /dev/sdb
+    $ sudo parted /dev/sdb
 
     (parted) mklabel gpt
     (parted) unit %
@@ -147,34 +152,26 @@ fdisk честно нас предупреждает, что для 3TB диск
 
     (parted) quit
 
-Раздел создали, теперь его нужно отформатировать. 
+Раздел создали, теперь его нужно отформатировать, указываем размер блока 4к:
 
     ::console
-    $ mkfs.ext4 /dev/sdb1
+    $ sudo mkfs.ext4 -b 4096 /dev/sdb
 
-    mkfs.ext4 /dev/sdb1
-    mke2fs 1.42.5 (29-Jul-2012)
-    Filesystem label=
-    OS type: Linux
-    Block size=4096 (log=2)
-    Fragment size=4096 (log=2)
-    Stride=0 blocks, Stripe width=256 blocks
-    183148544 inodes, 732566272 blocks
-    36628313 blocks (5.00%) reserved for the super user
-    First data block=0
-    Maximum filesystem blocks=4294967296
-    22357 block groups
-    32768 blocks per group, 32768 fragments per group
-    8192 inodes per group
-    Superblock backups stored on blocks: 
-            32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
-            4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+    mke2fs 1.42.13 (17-May-2015)
+    Found a gpt partition table in /dev/sdb
+    Proceed anyway? (y,n) y
+    Creating filesystem with 976754646 4k blocks and 244195328 inodes
+    Filesystem UUID: 6626a138-c076-46a9-8414-29ffd68c72a1
+    Superblock backups stored on blocks:
+            32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+            4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
             102400000, 214990848, 512000000, 550731776, 644972544
 
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (32768 blocks): done
     Writing superblocks and filesystem accounting information: done
+
 
 Пробуем примонтировать
 

@@ -9,6 +9,7 @@ Author: Swasher
 - [YAML/Ansible support](https://github.com/vermut/intellij-ansible)
 - [TextMate bundles support](https://github.com/textmate/ruby.tmbundle)
 - Markdown support
+- BashSupport
 
 ### Полезные шоткаты
 

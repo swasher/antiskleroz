@@ -92,6 +92,8 @@ IDE и редакторы
 
 - [jqueryvalidation.org](http://jqueryvalidation.org/)  - валидатор форм на jquery
 
+- [parsleyjs.org/](http://parsleyjs.org/) - валидатор форм, очень крутой 
+
 Python
 -----------------------
 
@@ -145,3 +147,9 @@ PaaS
 - [mailjet.com](https://www.mailjet.com/) - рассылка писем, множество фич. Free - 6000 emails/month
 
 - [mailgun.com](http://www.mailgun.com/) - The Email Service For Developers. Free - 10k emails/month
+
+Auth
+-----------------------
+
+- [auth0.com](https://auth0.com/) - Add authentication to your web. Free for 7k users.
+
