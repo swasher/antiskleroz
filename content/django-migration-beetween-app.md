@@ -1,4 +1,4 @@
-Title: Миграция модели между приложениями
+Title: Django: Миграция модели между приложениями
 Date: 2017-06-17 18:56
 Tags: django, migrations
 Category: IT
@@ -46,7 +46,7 @@ Django этого делать не позволяет.
         
 Зависимости миграция, для наглядности, выглядят так:
 
-[](http://res.cloudinary.com/swasher/image/upload/v1497880974/blog/migration_dependencies.png)
+![](http://res.cloudinary.com/swasher/image/upload/v1497880974/blog/migration_dependencies.png)
         
 #### 1. Переносим модель из старой app в новую
 
