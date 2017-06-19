@@ -10,7 +10,7 @@ Author: Swasher
     
 Далее, создаем новое подключение к базе данных и настраиваем ssh-туннель:
 
-![](http://res.cloudinary.com/swasher/image/upload/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "SSH Tunnel")
+![](http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "SSH Tunnel")
 
 В этом окне настривается ssh-туннель от PyCharm к Vagrant. Так как Vagrant у нас
 локальный, то адрес - 127.0.0.1, порт - 2222, юзер - vagrant (если специально не 

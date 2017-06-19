@@ -7,6 +7,11 @@ Author: Swasher
 Предположим, мы хотим перенсти модель Car в другое приложение. Стандартными средствами
 Django этого делать не позволяет.
 
+> ВНИМАНИЕ!!! Бекап базы обязателен! Скорее всего, понадобится не одна попытка, чтобы 
+> выполнить этот квест по перемещению модели.
+
+> ВНИМАНИЕ!!! Внимательно читаем комментарии в коде, там описаны критически важные действия
+
 Было:
 
     project
@@ -21,6 +26,28 @@ Django этого делать не позволяет.
       |_ newapp
         |_ Car
         
+Забегая вперед. У нас всего должно получится 4 файла миграции. После makemigration на 
+шаге 3 будет 1 автомиграция в newapp и 1 автомиграция в oldapp, и еще вручную 
+добавим 2 миграции в oldapp. На шаге 5 ручную миграцию в oldapp поставим *перед* 
+авто-миграцией, и у нас в итоге получится такая картина:
+
+    project
+      |_ oldapp
+      |  |_ migrations
+      |      |-0005_auto_20170406_1300.py  <- старая миграция до наших действий
+      |      |-0006_auto_20170617_1922.py  <- пустая миграция [database_operations изменяем имя таблицы на новую модель]
+      |      |-0007_auto_20170617_1808.py  <- автомиграция
+      |      |_0008_auto_20170617_1908.py  <- пустая миграция [state_operations удаление старой таблицы]
+      |_ newapp
+        |_ migrations
+        |    |_0001_initial.py             <- [state_operations - создание новой таблицы]
+        |                                  # Это может быть не стартовая миграция, а просто следующая в модели newapp
+        |_ Model Car
+        
+Зависимости миграция, для наглядности, выглядят так:
+
+[](http://res.cloudinary.com/swasher/image/upload/v1497880974/blog/migration_dependencies.png)
+        
 #### 1. Переносим модель из старой app в новую
 
 cut'n'paste
@@ -28,7 +55,7 @@ cut'n'paste
 #### 2. Исправляем импорты и внешние ключи
 
 Проверяем все места, где импортировалась наша модель, и где на нее были внешние ключи, 
-исправляем на новое `newapp`. Проверить поможет команда `manage.py check`
+исправляем на новое `newapp`. Проверить можно, выполнив `manage.py check`
 
 #### 3. Создаем миграции
 
@@ -41,6 +68,29 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Так как авто-миграции не работают, на нужно создать свои файлы миграций. Начнем с
 исходного приложения:
+
+#### 3a. Fix errors
+
+В реальном приложении перемещаемая модель Employee имела one-to-one отношение к можели User, и я получил такую ошибку:
+
+    $ python manage.py makemigrations
+    SystemCheckError: System check identified some issues:
+    
+    ERRORS:
+    core.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse accessor for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
+    core.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse query name for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse accessor for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse query name for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
+
+Если добавить `related_name` в старом приложении, это фиксит проблему:
+
+    class Employee(models.Model):
+        user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='+')
+
 
 #### 4. Создаем пустую миграцию в старом `app`
 
@@ -84,37 +134,38 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 0006_auto_20170617_1922.py:
 
     dependencies = [
-        ('oldapp', '0005_auto_20170406_1300'), # Change dependency to NOT use last auto-migration
+        # не забываем изменить зависимость на предыщую миграцию
+        ('oldapp', '0005_auto_xxx'), 
     ]
 
 0007_auto_20170617_1808.py:
 
     dependencies = [
-        ('oldapp', '0006_auto_20170617_1922'), # I changed the number so this 
-                                                  # auto-generated migration would be
-                                                  # after the custom one.
-        ('newapp', '0001_initial'), # Make certain the tires db state is setup
+        ('oldapp', '0006_auto_20170617_1922'),    # Меняем последовательность миграций
+                                                  # в зависимостях
+        ('newapp', '0001_initial'), # Добавляем зависимость от миграции в newapp
     ]
 
-#### 6. Редактируем нашу пустую миграцию
+#### 6. Редактируем нашу пустую миграцию [1 of 3 in oldapp, 006]
 
-Здеась мы разделяем операции `state` и `database`. Название таблицы меням на новое
-приложение, а состояние - удалено.
+Здесь мы разделяем операции `state` и `database`. Цель этого шага - изменить название 
+таблицы, не трогая состояние.
 
     class Migration(migrations.Migration):
     
         dependencies = [
-            ('oldapp', '0005_auto_20170406_1300'),
+            # не забываем изменить зависимость на предыщую миграцию
+            ('oldapp', '0005_auto_xxx'),
         ]
     
         database_operations = [
-            migrations.AlterModelTable('Car', 'newapp_Car')  
             # здесь указываем исходное имя модели ('Car') и конечное (newapp_Car'), 
-            # обычно в формате app_model
+            # обычно в формате app_model. Внимание! Case sensetive!
+            migrations.AlterModelTable('Car', 'newapp_Car')  
         ]
-    
+        
+        # Состояние пока-что не изменяем
         state_operations = [
-            migrations.DeleteModel('Car')
         ]
     
         operations = [
@@ -125,13 +176,20 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
  
 #### 7. Переходим к миграции для нового приложения (newapp)
 
+Операции в порядке, но мы хотим изменить только «состояние», а не базу данных. 
+Зачем? Потому что мы фактически сохраняем таблицы базы данных из старого приложения. 
+Кроме того, мы должны убедиться, что изменение database произойдет ДО выполнения этой
+миграции (указывает первую из трех соданных миграций в oldapp в качестве зависимости)
+
 В моем случае это 0001_initial.py. Обратите внимаение, в шаге 5 эта миграция
 используется как зависимость.
   
     class Migration(migrations.Migration):
     
         dependencies = [
-            # Установить эту зависимость на ПЕРВУЮ кастомную миграцию в oldapp
+            # Установить эту зависимость на ПЕРВУЮ кастомную миграцию в oldapp, 
+            # в которой мы изменили database без изменения state
+            # Если в django создал тут еще и другие зависимости - оставляем их
             ('oldapp', '0006_auto_20170617_1922'),
         ]
     
@@ -159,7 +217,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             migrations.SeparateDatabaseAndState(state_operations=state_operations)
         ]
         
-#### Возвращаемся к oldapp и редактируем авто-сгенерированную миграцию
+#### Возвращаемся к oldapp и редактируем авто-сгенерированную миграцию [2 of 3 in oldapp, 007]
 
 Редактируем `0007_auto_20170617_1808.py`, которая сгенерировалась еще на шаге 3.
 
@@ -169,7 +227,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             ('oldapp', '0007_auto_20170617_1841'), # Меняем название файла на авто-
                                                     сгенерированную миграцию
             
-            # auto-generated migration would be
+                                                    # auto-generated migration would be
                                                  # after the custom one.
             ('newapp', '0001_initial'), # Указываем миграцию из нового app.
         ]
@@ -192,18 +250,19 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             # Внизу удаляем DeleteModel. Удалять будем в следующей миграции.
         ]
         
-#### At last...
+#### At last... [3 of 3 in oldapp, 008]
 
 И последнее, но не менее важное: вам нужно сделать окончательную custom-миграцию в старом приложении.
 Здесь мы сделаем операцию «state» только для удаления модели oldapp.Car.
 Выполняется state-only  потому, что таблица базы данных для oldapp.Car уже переименована. 
-Эта последняя миграция очищает оставшееся состояние Django.
+Эта последняя миграция очищает оставшееся состояние Django. Создаем еще одну миграцию `008`
+в oldapp (`makemigration oldapp --empty`):
 
 
     class Migration(migrations.Migration):
     
         dependencies = [
-            ('cars', '0003_auto_20150603_0630'),
+            ('oldapp', '0007_auto_20170617_1922'),
         ]
     
         # This needs to be a state-only operation because the database model was
@@ -220,3 +279,49 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             # actual database structure.
             migrations.SeparateDatabaseAndState(state_operations=state_operations)
         ]
+        
+#### Finally
+
+    $ manage.py migrate
+    
+
+        
+================================================
+
+Вариант номер 2
+
+1. Копируем модель Car из oldapp в newapp
+
+2. Добавляем в newapp.Car класс Meta:
+
+    Class Meta:
+        db_table = 'oldapp_Car'
+        
+3. Создаем миграцию
+
+    $ python manage.py makemigrations newapp
+    
+4. В этой только что созданной миграции ищем операцию CreateModel, и копируем ее
+в newapp/migrations/0001_initial.py, как будто эта модель тут была с самого начала.
+Затем удаляем только-что созданную миграцию
+
+PS - Если это первая миграция в newapp, то этот шаг нужно пропустить.
+
+5. Теперь в старом oldapp комментируем создание модели в 0001_initial, и далее во всех
+миграциях комментируем все действия с этой моделью.
+
+6. Исправляем во всем проекте все импорты, все внешние ключи нашей модели на newapp.
+Also, don't forget that all possible foreign keys to app1.YourModel in migrations have to be changed to app2.YourModel
+Так же, не забудьте исправить все внешние ключи в миграция с oldapp.Car на newapp.Car
+
+7. В этот момент, если мы сделаем `manage.py migrate`, - ничего не смигрируется, и если
+мы сделаем `manage.py makemigration --dry-run` - никаких новых миграций не создастся.
+
+На этом месте я получил ошибку 
+The '... ' was declared with a lazy reference to '...', but app 'app' doesn't provide model 'Car'.
+
+Дальше дело не продвинулось.
+
+Потом я уже догадался, что вероятно дело в последовательнсти миграций... 
+
+ 
