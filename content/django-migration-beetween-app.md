@@ -14,27 +14,30 @@ Django этого делать не позволяет.
 
 Было:
 
+    :: bash
     project
       |_ oldapp
-        |_ Car
+        |_ model Car
       |_ newapp
     
 Должно получиться:
 
+    :: bash
     project
       |_ oldapp
       |_ newapp
-        |_ Car
+        |_ model Car
         
-Забегая вперед. У нас всего должно получится 4 файла миграции. После makemigration на 
+Забегая немного вперед. У нас всего должно получится 4 файла миграции. После makemigration на 
 шаге 3 будет 1 автомиграция в newapp и 1 автомиграция в oldapp, и еще вручную 
 добавим 2 миграции в oldapp. На шаге 5 ручную миграцию в oldapp поставим *перед* 
 авто-миграцией, и у нас в итоге получится такая картина:
 
+    :: bash
     project
       |_ oldapp
       |  |_ migrations
-      |      |-0005_auto_20170406_1300.py  <- старая миграция, до наших действий
+      |      |-0005_auto_20170406_1300.py  <- старая миграция, еще до наших действий
       |      |-0006_auto_20170617_1922.py  <- пустая миграция [database_operations изменяем имя 
       |      |                                таблицы на новую модель: newapp_car]
       |      |-0007_auto_20170617_1808.py  <- автомиграция
@@ -47,7 +50,7 @@ Django этого делать не позволяет.
         |                                     следующая в модели newapp
         |_ Model Car
         
-Зависимости миграция, для наглядности, выглядят так:
+Зависимости миграций, для наглядности, выглядят так:
 
 ![](http://res.cloudinary.com/swasher/image/upload/v1497880974/blog/migration_dependencies.png)
         
@@ -62,41 +65,71 @@ cut'n'paste
 
 #### 3. Создаем миграции
 
+    :: bash
     $ manage.py makemigrations
+    
+    Migrations for 'newapp':
+      newapp/migrations/0001_initial.py
+        - Create model Car
+    Migrations for 'oldapp':
+      oldapp/migrations/0006_auto_20170617_1808.py
+        - Alter field customer on rental
+        - Delete model Car
+
+Строка `Alter field customer on rental` означает, что у нас есть таблица Rental, которая
+имеет внешний ключ на нашу модель Car:
+
+    :: python
+    # in oldapp
+    class Rental(models.Model):
+        customer = models.ForeignKey(Car)
+        
+Миграция изменила этот ключ в соответсвии с новой таблицей newapp.Car.
 
 Если сейчас запустить `migrate`, получим ошибку `django.db.utils.IntegrityError: 
 insert or update on table "oldapp_dependedtable" violates foreign key constraint...`,
 потому что мы удалили таблицу, которая содержит данные, на которые указывают ключи из
 другой таблицы.
 
-Так как авто-миграции не работают, на нужно создать свои файлы миграций. Начнем с
-исходного приложения:
-
 #### 3a. Fix errors
 
-В реальном приложении перемещаемая модель Employee имела one-to-one отношение к можели User, и я получил такую ошибку:
+У меня в реальном приложении перемещаемая модель Employee имела one-to-one отношение к 
+модели User, и я получил такую ошибку:
 
+    :: bash
     $ python manage.py makemigrations
     SystemCheckError: System check identified some issues:
     
     ERRORS:
-    core.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse accessor for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
-    core.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse query name for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
-    workflow.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse accessor for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
-    workflow.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse query name for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 'Employee.user' or 'Employee.user'.
+    core.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse \
+    accessor for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 
+            'Employee.user' or 'Employee.user'.
+    core.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse \
+    query name for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 
+            'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse \
+    accessor for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 
+            'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse \
+    query name for 'Employee.user'.
+            HINT: Add or change a related_name argument to the definition for 
+            'Employee.user' or 'Employee.user'.
 
 Если добавить `related_name` в старом приложении, это фиксит проблему:
 
+    :: python
     class Employee(models.Model):
         user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='+')
 
 
 #### 4. Создаем пустую миграцию в старом `app`
 
+теперь созданим свои custom-миграции. Начнем с исходного приложения.
+
+    :: bash
     $ python manage.py makemigrations old_app --empty
     
 #### 5. Меням последовательность миграций
@@ -105,6 +138,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 присвоить номер, меньший на 1, чем последняя автомиграция, и соответствующим образом
 исправить `dependencies `. Например, было
 
+    :: text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
@@ -114,28 +148,31 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Послое makemigrations имеем
 
+    :: text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
     0004_auto_20160714_1151.py
     0005_auto_20170406_1300.py
     0006_auto_20170617_1808.py  <- миграция с шага 3
-    0007_auto_20170617_1922.py  <- новая пустая миграция  
+    0007_auto_20170617_1922.py  <- пустая миграция с шага 4
 
 Переименовываем файлы следуюшим образом
 
+    :: text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
     0004_auto_20160714_1151.py
     0005_auto_20170406_1300.py
-    0006_auto_20170617_1922.py  <- новая пустая миграция 
+    0006_auto_20170617_1922.py  <- пустая миграция с шага 4
     0007_auto_20170617_1808.py  <- миграция с шага 3
 
 и меняем в двух последних миграциях зависимости:
 
 0006_auto_20170617_1922.py:
 
+    :: python
     dependencies = [
         # не забываем изменить зависимость на предыщую миграцию
         ('oldapp', '0005_auto_xxx'), 
@@ -143,6 +180,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 0007_auto_20170617_1808.py:
 
+    :: python
     dependencies = [
         ('oldapp', '0006_auto_20170617_1922'),    # Меняем последовательность миграций
                                                   # в зависимостях
@@ -154,6 +192,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 Здесь мы разделяем операции `state` и `database`. Цель этого шага - изменить название 
 таблицы, не трогая состояние.
 
+    :: python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -187,12 +226,13 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 В моем случае это 0001_initial.py. Обратите внимаение, в шаге 5 эта миграция
 используется как зависимость.
   
+    :: python
     class Migration(migrations.Migration):
     
         dependencies = [
             # Установить эту зависимость на ПЕРВУЮ кастомную миграцию в oldapp, 
             # в которой мы изменили database без изменения state
-            # Если в django создал тут еще и другие зависимости - оставляем их
+            # Если django создал тут еще и другие зависимости - оставляем их
             ('oldapp', '0006_auto_20170617_1922'),
         ]
     
@@ -203,7 +243,8 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             migrations.CreateModel(
                 name='Car',
                 fields=[
-                    ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                    ('id', models.AutoField(verbose_name='ID', serialize=False, \
+                        auto_created=True, primary_key=True)),
                     ('name', models.CharField(max_length=40, verbose_name=b'Brand Name')),
                     ('color', models.CharField(max_length=40, verbose_name=b'Color')),
                 ],
@@ -224,6 +265,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Редактируем `0007_auto_20170617_1808.py`, которая сгенерировалась еще на шаге 3.
 
+    :: python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -235,9 +277,9 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
             ('newapp', '0001_initial'), # Указываем миграцию из нового app.
         ]
     
-        # This migration was auto-generated when I changed the model FK references.
-        # We need to remove the DeleteModel operation because that model exists in 
-        # state only. 
+        # Эта миграция была авто-сгенерирована для изменения ForeignKey, указывающий на нашу таблицу.
+        # Нам нужно только удалить операцию DeleteModel, потому что эта модель в данный 
+        # момент существует state-only
         operations = [
             migrations.AlterField(
                 model_name='car',
@@ -262,24 +304,25 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 в oldapp (`makemigration oldapp --empty`):
 
 
+    :: python
     class Migration(migrations.Migration):
     
         dependencies = [
             ('oldapp', '0007_auto_20170617_1922'),
         ]
     
-        # This needs to be a state-only operation because the database model was
-        # renamed, and no longer exists according to Django.
+        # Здесь нужно изменить operations на state_operations, потому что модель в ДБ 
+        # была переименована, и она более не существует для Django
         state_operations = [
-            # Pasted from auto-generated operations in previous step:
+            # Copy-paste из из авто-сгенерированной операции на предыдущем шаге 
             migrations.DeleteModel(
                 name='Tires',
             ),
         ]
     
         operations = [
-            # After this state operation, the Django DB state should match the 
-            # actual database structure.
+            # После этой state-операции, состояние Django будет соответсвовать 
+            # реальной структуре в базе данныхю.
             migrations.SeparateDatabaseAndState(state_operations=state_operations)
         ]
         
