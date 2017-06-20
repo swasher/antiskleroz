@@ -14,7 +14,7 @@ Django этого делать не позволяет.
 
 Было:
 
-    :: bash
+    ::bash
     project
       |_ oldapp
         |_ model Car
@@ -22,7 +22,7 @@ Django этого делать не позволяет.
     
 Должно получиться:
 
-    :: bash
+    ::bash
     project
       |_ oldapp
       |_ newapp
@@ -33,7 +33,7 @@ Django этого делать не позволяет.
 добавим 2 миграции в oldapp. На шаге 5 ручную миграцию в oldapp поставим *перед* 
 авто-миграцией, и у нас в итоге получится такая картина:
 
-    :: bash
+    ::bash
     project
       |_ oldapp
       |  |_ migrations
@@ -65,7 +65,7 @@ cut'n'paste
 
 #### 3. Создаем миграции
 
-    :: bash
+    ::bash
     $ manage.py makemigrations
     
     Migrations for 'newapp':
@@ -79,7 +79,7 @@ cut'n'paste
 Строка `Alter field customer on rental` означает, что у нас есть таблица Rental, которая
 имеет внешний ключ на нашу модель Car:
 
-    :: python
+    ::python
     # in oldapp
     class Rental(models.Model):
         customer = models.ForeignKey(Car)
@@ -96,7 +96,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 У меня в реальном приложении перемещаемая модель Employee имела one-to-one отношение к 
 модели User, и я получил такую ошибку:
 
-    :: bash
+    ::bash
     $ python manage.py makemigrations
     SystemCheckError: System check identified some issues:
     
@@ -120,7 +120,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Если добавить `related_name` в старом приложении, это фиксит проблему:
 
-    :: python
+    ::python
     class Employee(models.Model):
         user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='+')
 
@@ -129,7 +129,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 теперь созданим свои custom-миграции. Начнем с исходного приложения.
 
-    :: bash
+    ::bash
     $ python manage.py makemigrations old_app --empty
     
 #### 5. Меням последовательность миграций
@@ -138,7 +138,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 присвоить номер, меньший на 1, чем последняя автомиграция, и соответствующим образом
 исправить `dependencies `. Например, было
 
-    :: text
+    ::text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
@@ -148,7 +148,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Послое makemigrations имеем
 
-    :: text
+    ::text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
@@ -159,7 +159,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Переименовываем файлы следуюшим образом
 
-    :: text
+    ::text
     0001_initial.py                 
     0002_auto_20150807_1307.py      
     0003_auto_20150807_1341.py
@@ -172,7 +172,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 0006_auto_20170617_1922.py:
 
-    :: python
+    ::python
     dependencies = [
         # не забываем изменить зависимость на предыщую миграцию
         ('oldapp', '0005_auto_xxx'), 
@@ -180,7 +180,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 0007_auto_20170617_1808.py:
 
-    :: python
+    ::python
     dependencies = [
         ('oldapp', '0006_auto_20170617_1922'),    # Меняем последовательность миграций
                                                   # в зависимостях
@@ -192,7 +192,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 Здесь мы разделяем операции `state` и `database`. Цель этого шага - изменить название 
 таблицы, не трогая состояние.
 
-    :: python
+    ::python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -226,7 +226,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 В моем случае это 0001_initial.py. Обратите внимаение, в шаге 5 эта миграция
 используется как зависимость.
   
-    :: python
+    ::python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -265,7 +265,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
 Редактируем `0007_auto_20170617_1808.py`, которая сгенерировалась еще на шаге 3.
 
-    :: python
+    ::python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -304,7 +304,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 в oldapp (`makemigration oldapp --empty`):
 
 
-    :: python
+    ::python
     class Migration(migrations.Migration):
     
         dependencies = [
@@ -328,46 +328,9 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
         
 #### Finally
 
+    ::bash
     $ manage.py migrate
     
 
-        
-================================================
-
-Вариант номер 2
-
-1. Копируем модель Car из oldapp в newapp
-
-2. Добавляем в newapp.Car класс Meta:
-
-    Class Meta:
-        db_table = 'oldapp_Car'
-        
-3. Создаем миграцию
-
-    $ python manage.py makemigrations newapp
-    
-4. В этой только что созданной миграции ищем операцию CreateModel, и копируем ее
-в newapp/migrations/0001_initial.py, как будто эта модель тут была с самого начала.
-Затем удаляем только-что созданную миграцию
-
-PS - Если это первая миграция в newapp, то этот шаг нужно пропустить.
-
-5. Теперь в старом oldapp комментируем создание модели в 0001_initial, и далее во всех
-миграциях комментируем все действия с этой моделью.
-
-6. Исправляем во всем проекте все импорты, все внешние ключи нашей модели на newapp.
-Also, don't forget that all possible foreign keys to app1.YourModel in migrations have to be changed to app2.YourModel
-Так же, не забудьте исправить все внешние ключи в миграция с oldapp.Car на newapp.Car
-
-7. В этот момент, если мы сделаем `manage.py migrate`, - ничего не смигрируется, и если
-мы сделаем `manage.py makemigration --dry-run` - никаких новых миграций не создастся.
-
-На этом месте я получил ошибку 
-The '... ' was declared with a lazy reference to '...', but app 'app' doesn't provide model 'Car'.
-
-Дальше дело не продвинулось.
-
-Потом я уже догадался, что вероятно дело в последовательнсти миграций... 
 
  
