@@ -1,29 +1,31 @@
-Title: Подключение из Pycharm к базе PostreSQL, находящейся в контейнере Vagrant
+Title: Подключение из Pycharm к PostreSQL в контейнере Vagrant
 Date: 2017-06-17 23:51
 Tags: pycharm, vagrant, postgres
 Category: IT
 Author: Swasher
 
-Начинаем с проверки `pg_hba.conf`, там должна быть такая строка:
+Начинаем с проверки `pg_hba.conf`, там должна быть такие строки:
 
     host     <dbname>     <dbuser>    <ip-vagrant-machine>/16        md5
+    host     <dbname>     <dbuser>    ::1/128                        md5
     
 Далее, создаем новое подключение к базе данных и настраиваем ssh-туннель:
 
-![](http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "SSH Tunnel")
+{% img lb-image  http://res.cloudinary.com/swasher/image/upload/v1497733119/blog/pycharm_postgres_ssh.png 750 SSH %}
 
 В этом окне настривается ssh-туннель от PyCharm к Vagrant. Так как Vagrant у нас
 локальный, то адрес - 127.0.0.1, порт - 2222, юзер - vagrant (если специально не 
 менялось Vagrantfile). Далее указываем ключ, примерный путь, который лежит внутри 
 проекта, что-то типа 
-
+    
+    ::console
     C:\Users\<user>\PycharmProjects\<project>\.vagrant\machines\default\virtualbox\private_key
 
 Пасс-фраза для этого ключа - пустая.
 
 Далее настраиваем доступ к самой базе:
 
-![](http://res.cloudinary.com/swasher/image/upload/c_scale,w_750/v1497733119/blog/Data_Sources_and_Drivers_2017-06-17_23.57.33.png "Postgres connect")
+{% img lb-image  http://res.cloudinary.com/swasher/image/upload/v1497733938/blog/pycharm_postgres_general.png 750 General %}
 
 Здесь IP - это внутренний IP контейнера, он должен быть доступен с нашего десктопа, проверяем пингом.
 Пользователь и пароль - от нашей базы данных.

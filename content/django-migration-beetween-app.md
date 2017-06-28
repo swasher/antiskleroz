@@ -91,7 +91,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 потому что мы удалили таблицу, которая содержит данные, на которые указывают ключи из
 другой таблицы.
 
-#### 3a. Fix errors
+#### 3.1. Fix errors
 
 У меня в реальном приложении перемещаемая модель Employee имела one-to-one отношение к 
 модели User, и я получил такую ошибку:
@@ -101,22 +101,22 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
     SystemCheckError: System check identified some issues:
     
     ERRORS:
-    core.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse \
-    accessor for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 
-            'Employee.user' or 'Employee.user'.
-    core.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse \
-    query name for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 
-            'Employee.user' or 'Employee.user'.
-    workflow.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with reverse \
-    accessor for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 
-            'Employee.user' or 'Employee.user'.
-    workflow.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with reverse \
-    query name for 'Employee.user'.
-            HINT: Add or change a related_name argument to the definition for 
-            'Employee.user' or 'Employee.user'.
+    core.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with \
+    reverse accessor for 'Employee.user'.
+        HINT: Add or change a related_name argument to the definition for 
+        'Employee.user' or 'Employee.user'.
+    core.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with 
+    reverse query name for 'Employee.user'.
+        HINT: Add or change a related_name argument to the definition for 
+        'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E304) Reverse accessor for 'Employee.user' clashes with \
+    reverse accessor for 'Employee.user'.
+        HINT: Add or change a related_name argument to the definition for 
+        'Employee.user' or 'Employee.user'.
+    workflow.Employee.user: (fields.E305) Reverse query name for 'Employee.user' clashes with \
+    reverse query name for 'Employee.user'.
+        HINT: Add or change a related_name argument to the definition for 
+        'Employee.user' or 'Employee.user'.
 
 Если добавить `related_name` в старом приложении, это фиксит проблему:
 
@@ -202,7 +202,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
     
         database_operations = [
             # здесь указываем исходное имя модели ('Car') и конечное (newapp_Car'), 
-            # обычно в формате app_model. Внимание! Case sensetive!
+            # обычно в формате app_model, в нижнем регистре
             migrations.AlterModelTable('Car', 'newapp_Car')  
         ]
         
@@ -269,15 +269,16 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
     class Migration(migrations.Migration):
     
         dependencies = [
-            ('oldapp', '0007_auto_20170617_1841'), # Меняем название файла на авто-
-                                                    сгенерированную миграцию
+            ('oldapp', '0006_auto_20170617_1922'), # Меняем название файла на авто-
+                                                   # сгенерированную миграцию
             
                                                     # auto-generated migration would be
                                                  # after the custom one.
             ('newapp', '0001_initial'), # Указываем миграцию из нового app.
         ]
     
-        # Эта миграция была авто-сгенерирована для изменения ForeignKey, указывающий на нашу таблицу.
+        # Эта миграция была авто-сгенерирована для изменения ForeignKey, которые
+        # указываюn на нашу таблицу.
         # Нам нужно только удалить операцию DeleteModel, потому что эта модель в данный 
         # момент существует state-only
         operations = [
@@ -322,7 +323,7 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
     
         operations = [
             # После этой state-операции, состояние Django будет соответсвовать 
-            # реальной структуре в базе данныхю.
+            # реальной структуре в базе данных.
             migrations.SeparateDatabaseAndState(state_operations=state_operations)
         ]
         
@@ -330,7 +331,3 @@ insert or update on table "oldapp_dependedtable" violates foreign key constraint
 
     ::bash
     $ manage.py migrate
-    
-
-
- 
