@@ -23,6 +23,9 @@ Author: Swasher
 
 Пасс-фраза для этого ключа - пустая.
 
+По неизвестной причине, иногда аутентификация с помощью ключа не проходит, тогда изменяем
+`Auth type` на `password` и используем логин:пароль `vagrant:vagrant`.
+
 Далее настраиваем доступ к самой базе:
 
 {% img lb-image  http://res.cloudinary.com/swasher/image/upload/v1497733938/blog/pycharm_postgres_general.png 750 General %}
