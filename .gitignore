@@ -3,7 +3,6 @@
 /themes/pelican-elegant
 /content/draft
 /content/images
-/.vagrant
 /themes/subtle/static/tipuesearch/tipuesearch.css.orig
 /pelican.pid
 /cache
@@ -14,4 +13,3 @@
 *.log
 __pycache__/
 .idea/
-.vagrant/

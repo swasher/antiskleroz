@@ -1,4 +1,4 @@
-Title: Bash completions
+ Title: Bash completions
 Date: 2015-03-23 12:32
 Tags: bash, completions
 Category: IT
