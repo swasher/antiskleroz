@@ -22,12 +22,12 @@
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
-/*@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   !* ОЧЕНЬ ХОРОШО!!! (текст) *!
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
+/*@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   !* ОЧЕНЬ ХОРОШО!!! (текст) *!
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed&subset=cyrillic);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic&subset=cyrillic);*/
 
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic&subset=cyrillic); /* body text */
 
 
@@ -397,7 +397,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 		background-size: 16px 16px; }
 		.social a[href*='linkedin.com'] {background-image: url('../images/icons/linkedin.png');
 		background-size: 16px 16px; }
-		.social a[href*='vk.com'] {background-image: url('http://vk.com/press/Simple.png');
+		.social a[href*='vk.com'] {background-image: url('https://vk.com/press/Simple.png');
 		background-size: 16px 16px; }
 
 

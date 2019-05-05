@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Swasher'
 SITENAME = 'Antiskleroz'
-#SITEURL = 'http://antiskleroz.pp.ua'
+#SITEURL = 'https://antiskleroz.pp.ua'
 SITEURL = ''
 
 #CACHE_CONTENT = True
