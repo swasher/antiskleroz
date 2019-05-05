@@ -103,11 +103,11 @@ None
 
 **Глава 5: Отверженные** *(Chapter 5: The Forsaken)*
 
-{% img lb-image  %}
+{% img lb-image https://dummyimage.com/300x4:3 %}
 
 **Глава 6: Одиночка** *(Chapter 6: A Man Apart)*
 
-{% img lb-image  %}
+{% img lb-image https://dummyimage.com/300x4:3 %}
 
 ####Сайд квесты
 
