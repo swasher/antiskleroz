@@ -10,9 +10,9 @@ changes can be find by compare with .orig
 changes can be find by compare with .orig
 */
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   /* ОЧЕНЬ ХОРОШО!!! (текст) */
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=latin,cyrillic);   /* ОЧЕНЬ ХОРОШО!!! (текст) */
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:700,700italic&subset=latin,cyrillic);  /* ОЧЕНЬ ХОРОШО!!! (заголовки) */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic&subset=latin,cyrillic);
 
 
 #tipue_search_input
