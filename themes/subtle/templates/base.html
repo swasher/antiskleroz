@@ -6,11 +6,13 @@
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
         <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
 
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css">
 
         <!-- Lightbox2 support -->
-        <script src="{{ SITEURL }}/theme/lightbox/js/jquery-1.10.2.min.js"></script>
-        <script src="{{ SITEURL }}/theme/lightbox/js/lightbox-2.6.min.js"></script>
+        <script src="{{ SITEURL }}/theme/lightbox/js/lightbox-2.11.min.js"></script>
         <link href="{{ SITEURL }}/theme/lightbox/css/lightbox.css" rel="stylesheet" type="text/css" />
 
 
@@ -54,7 +56,6 @@
         {% block content %}
         {% endblock %}
 
-        <!--{% include 'googlesearch.html' %}-->
         </div>
 
         <section id="extras" class="body">

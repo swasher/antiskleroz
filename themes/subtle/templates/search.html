@@ -5,10 +5,11 @@ Search - {{ SITENAME|striptags }}
 {% endblock title %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" media="screen">
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{{ SITEURL }}/tipuesearch_content.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
+
 
 <script>
 $(document).ready(function() {
@@ -22,8 +23,15 @@ $(document).ready(function() {
 
 <section id="content" class="body">
 
-<div align="center"><input type="text" size="60" id="tipue_search_input">
-<input type="button" id="tipue_search_button" value="Search"></div>
+<form>
+  <div class="tipue_search_group" align="center">
+    <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required>
+    <button type="submit" class="tipue_search_button">
+      <div class="tipue_search_icon">&#128270;</div>
+    </button>
+  </div>
+</form>
+
 <div id="tipue_search_content"></div>
 
 </section>
