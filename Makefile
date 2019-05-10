@@ -74,9 +74,9 @@ regenerate:
 
 serve:
 ifdef PORT
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
+	pelican --listen -p  $(PORT)
 else
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
+	pelican --listen -p
 endif
 
 serve-global:
