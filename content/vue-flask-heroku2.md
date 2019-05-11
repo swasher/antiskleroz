@@ -15,15 +15,15 @@ Status: draft
 Эта статья не призвана учить азам vue или flask, больше упор делается на соеденение всех компонентов стека. 
 Поэтому объяснений самого кода будет минимум.
 
-Первая попытка была создать структуру проекта с папками frontend и backend:
-
-doc/
-├── backend/
-├── frontend/
-│   └── package.json
-├ Procfile
-├ requirements.txt
-└ run.py
+Первая, неудачная попытка была создать структуру проекта с папками frontend и backend:
+    
+    doc/
+    ├── backend/
+    ├── frontend/
+    │   └── package.json
+    ├ Procfile
+    ├ requirements.txt
+    └ run.py
 
 То есть flask и vue были отделены от корневого каталога. В таком виде оно хорошо работает, но для деплоя на heroku
 нужно наличие в корне package.json. Это можно побороть скриптами, но я решил попробовать flatten-структуру.
@@ -42,6 +42,8 @@ Vue.js
     
     $ cd /home/all_my_projects
     $ vue create flask-vue-heroku --no-git
+
+> Pycharm notes: In `Settings:Language` turn on flask integration.
 
 Выбираем кастомную установку, пресет линтинга Airbnb, хранение настроек в одном файле. Переходим в папку проекта, и в
 отдельном терминале запускаем dev-сервер:
@@ -91,10 +93,69 @@ Vue.js
     };
     </script>
 
+Мы должны увидеть `Server working on: Unknown`: 
 
-Теперь мы должны увидеть `Server working on: Unknown`: 
+{% img image https://res.cloudinary.com/swasher/image/upload/v1557519436/blog/flask-vue-1.png %}
 
-{% img image https://res.cloudinary.com/swasher/image/upload/v1557519436/blog/flask-vue-heroku_-_Google_Chrome_2019-05-10_23.09.16.png %}
+Вкратце, что происходит в коде:
+
+- `public/index.html` - точка входа. Главное в этом файле - строка `<div id="app"></div>`, этот id='app' фреймворк vue.js заменит на 
+сгенерированный им html-код.
+- `src/main.js` - в этом файле загружается и инициализируется vue. Тут же мы указываем, что сгенерированный код будет помещен
+в контейнер с id=app. Во второй строке подгружается 'главный' компонент 'App.vue', в который, в свою очередь, будут подгружаться
+все созданные нами компоненты.
+- `src/App.vue` - 'главный' (root) компонент. Как и любой компонент, состоит из раздела `template` - это html-темплейт наподобие Jinja,  
+раздела `script`, который этот темплейт преобразует в собственно html и возвращает как результат работы компонента, и раздел
+`style`, который содержит CSS-стили для этого компонента.
+- `src/components/Server_os.vue` - это наш рабочий компонент, который подключается в главный `App.vue`. Содержит те же разделы.
+В разделе `script` немного другой синтаксис - компонент объявляется как `export default` и указывается свойство `name` ('Server_os'). Под этим именем
+он может импортироваться в другие компоненты (переиспользоваться). Свойство `data` содержит функцию - она возвращает некие данные для
+использования в темплейте. У нас она пока-что возвращает просто переменную `os` со значением 'Unknown'.
+
+Фронт-энд часть у нас работает, займемся бекэнд. Сделаем так, чтобы серверный код передавал на фронтэнд название операционной системы сервера.
+
+Flask
+=======================================
+
+    $ mkdir flask-vue-heroku
+    $ cd flask-vue-heroku
+    $ pipenv install flask
+    
+> Pycharm notes: Mark `venv` directory as excluded in `Settings:Project Structure`. 
+
+Создадим в корне `app.py`:
+    
+    ::python
+    from flask import Flask, jsonify
+    import platform
+    app = Flask(__name__)
+    
+    
+    @app.route('/')
+    def get_os_name():
+        p = platform.platform()
+        return jsonify({'platform': p})
+        
+Нужно установить переменную окружения (в винде вот так):
+
+    > set FLASK_ENV=development
+    
+Запускаем flask -`flask run` и смотрим, что у нас на 5000 порту:
+
+    {
+      "platform": "Windows-7-6.1.7601-SP1"
+    }
+
+Сейчас мы можем запустить одновременно обе части приложения - в одной консоле flask, в другой vue.js 
+
+{% img image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png %}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
 
 
 Теперь попробуем получить какую-то информацию с бекенда. Для ajax
