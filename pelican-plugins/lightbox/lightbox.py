@@ -27,7 +27,7 @@ def wrap_image_tags(p):
 
     if p._content is not None:
         content = p._content
-        soup = BeautifulSoup(content)
+        soup = BeautifulSoup(content, features="html.parser")
 
         # Wrap each image tag in an anchor with a link.  Add the
         # attribute for the lightbox set to activate.

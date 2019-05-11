@@ -122,6 +122,9 @@ Flask
     
 > Pycharm notes: Mark `venv` directory as excluded in `Settings:Project Structure`. 
 
+Заголовок H2
+----------------------------
+
 Создадим в корне `app.py`:
     
     ::python
@@ -150,7 +153,7 @@ Flask
 
 Сейчас мы можем запустить одновременно обе части приложения - в одной консоле flask, в другой vue.js 
 
-{% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png %}
+{% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png 760 %}
 
 Axios
 ===================================================
@@ -193,7 +196,8 @@ Axios
     </script>
     
 Что здесь происходит:
-- имя компонента - 'Server_os', оно будет видно в отладчике Vue в хроме
+
+- имя компонента - `Server_os`, оно будет видно в отладчике Vue в хроме
 - data() - указываем, что компонент будет возвращать `os`
 - далее создаем метод `getOs`, который выполняет ajax запрос по пути `path`
 - ajax возвращает объект response
@@ -204,10 +208,12 @@ Axios
 Теперь мы должны увидеть ответ `Server working on: Windows-7-6.1.7601-SP1`, но этого не происходит, ответ пустой.
 Запускаем отладчик Chrome и видим такую ошибку 
 
-    Access to XMLHttpRequest at 'http://localhost:5000/' from origin 'http://localhost:8080' has been blocked 
-    by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+    ::bash
+    Access to XMLHttpRequest at 'http://localhost:5000/' from origin 'http://localhost:8080' 
+    has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present 
+    on the requested resource.
 
-{% img image https://res.cloudinary.com/swasher/image/upload/v1557569338/blog/flask-vue-3.png %}
+{% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557569338/blog/flask-vue-3.png 760 %}
 
 Это происходит потому, что flask в целях безопасности запрещает обращение с другого домена (или порта, в нашем случае). 
 Чтобы это пофиксить, ставим библиотеку flask-cors: `pipenv install -U flask-cors` и добавим две строчки в `app.py`
@@ -220,37 +226,19 @@ Axios
     # enable CORS
     CORS(app)
 
+Смотрим еще раз:
 
-DEPRECATED
-=====================================
+{% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557570857/blog/flask-vue-4.png 760 %}
 
-    
-Имени нет. Это потому, что у нас не проходят кросс-доменные запросы. Смотрим в дебаггер хрома (F12), и видим что-то вроде
 
-    Access to XMLHttpRequest at 'http://localhost:5000/' from origin 'http://localhost:8080' has been blocked 
-    by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-    
-Чтобы это пофиксить, ставим библиотеку flask-cors: `pipenv install -U flask-cors` и добавим две строчки в `__init__.py`
-
-    ::python
-    from flask_cors import CORS
-    
-    # enable CORS
-    CORS(app)
-
-Смотрим теперь:
-
-    Hello, Susana
-    
+   
 Все работает, фронтэнд принимает данные от бекенда. На этом будем считать первую версию приложения законченной и перейдем к деплою на Heroku. После удачного деплоя 
 попробуем усложнить приложиние, добавив работу с БД, web-компонентами и т.д.
-
-##to be continued....
 
 Heroku
 ===================================
 
-Нам понадобится установленные [Heroku Toolbelt](https://blog.heroku.com/the_heroku_toolbelt).
+Нам понадобится установленный [Heroku Toolbelt](https://blog.heroku.com/the_heroku_toolbelt).
 
 Так как мы пилим темплейт для автоматического деплоя, настроим проект таким образом, чтобы он разворачивался на
 Heroku путем [нажатия одной кнопки](https://devcenter.heroku.com/articles/heroku-button) в репозитории Github. Создадим
