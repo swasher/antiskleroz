@@ -150,7 +150,7 @@ Flask
 
 Сейчас мы можем запустить одновременно обе части приложения - в одной консоле flask, в другой vue.js 
 
-{% img image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png %}
+{% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png %}
 
 Axios
 ===================================================
@@ -202,8 +202,10 @@ Axios
 - хук created запуская метод при инициализации экземпляра Vue
 
 Теперь мы должны увидеть ответ `Server working on: Windows-7-6.1.7601-SP1`, но этого не происходит, ответ пустой.
-Запускаем отладчик Chrome и видим такую ошибку `Access to XMLHttpRequest at 'http://localhost:5000/' from origin 
-'http://localhost:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.`
+Запускаем отладчик Chrome и видим такую ошибку 
+
+    Access to XMLHttpRequest at 'http://localhost:5000/' from origin 'http://localhost:8080' has been blocked 
+    by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 {% img image https://res.cloudinary.com/swasher/image/upload/v1557569338/blog/flask-vue-3.png %}
 
@@ -222,16 +224,6 @@ Axios
 DEPRECATED
 =====================================
 
-Пробуем запустить нашу связку. Для этого в двух разных терминалах запускем vue и flask командами `npm run dev` в 
-директории `frontend` и `pyton run.py` из корня. Смотрим, что отдает flask по адресу http://127.0.0.1:5000/:
-
-    {
-        "firstname": "Susana"
-    }
-    
-это мы и ожидали. Теперь смотрим, что отдаем vue (http://localhost:8080/):
-
-    Hello,
     
 Имени нет. Это потому, что у нас не проходят кросс-доменные запросы. Смотрим в дебаггер хрома (F12), и видим что-то вроде
 
