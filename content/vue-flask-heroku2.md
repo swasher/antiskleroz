@@ -378,3 +378,6 @@ Heroku путем [нажатия одной кнопки](https://devcenter.her
     |One button Installer | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) |
     |---------------------|-------------------------------------------------------------------------------------|
 
+Репозиторий кода из этой статьи на [github](https://github.com/swasher/flask-vue-heroku).
+В в репе имеется красивая кнопка, при нажатии на которую код из репозитория автоматически
+деплоится на heroku.
