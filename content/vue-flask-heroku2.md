@@ -5,18 +5,15 @@ Category: IT
 Author: Swasher
 
 Задача - написать минимальное, но хорошо структурированое приложение-темплейт, использующее в качестве
-бекенда Flask, фронтэнд - Vue.js, в качестве хоста выберем SaaS платформу Heroku. База данных, конечно, Postges,
-локально для девелопинга SQLite, в качестве ORM для Flask я выбрал Peewee вместо обычной SQLAlchemy.
-
-Приложение минимальное - имеет модель Car с единственным полем name, по ссылке /admin можно добавлять записи, по
-ссылке / эти записи выводятся на экран.
+бекенда Flask, фронтэнд - Vue.js, в качестве хоста используем PaaS платформу Heroku. База данных, конечно, Postges,
+локально для девелопинга SQLite [**уточнить**], в качестве ORM для Flask я выбрал Peewee вместо обычной SQLAlchemy.
 
 Эта статья не призвана учить азам vue или flask, больше упор делается на соеденение всех компонентов стека. 
 Поэтому объяснений самого кода будет минимум.
 
 Первая, неудачная попытка была создать структуру проекта с папками frontend и backend:
     
-    doc/
+    root/
     ├── backend/
     ├── frontend/
     │   └── package.json
@@ -37,8 +34,8 @@ Vue.js
 
     $ npm install -g @vue/cli
     
-Следующая команда создаст корневую директорию для нашего проекта. 
-    
+Следующая команда создаст корневую директорию для нашего проекта.
+
     $ cd /home/all_my_projects
     $ vue create flask-vue-heroku --no-git
 
@@ -122,9 +119,6 @@ Flask
     
 > Pycharm notes: Mark `venv` directory as excluded in `Settings:Project Structure`. 
 
-Заголовок H2
-----------------------------
-
 Создадим в корне `app.py`:
     
     ::python
@@ -151,7 +145,7 @@ Flask
       "platform": "Windows-7-6.1.7601-SP1"
     }
 
-Сейчас мы можем запустить одновременно обе части приложения - в одной консоле flask, в другой vue.js 
+Flask возвращает данные в виде json-объекта. Сейчас мы можем запустить одновременно обе части приложения - в одной консоле flask, в другой vue.js 
 
 {% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557565280/blog/flask-vue-2.png 760 %}
 
@@ -230,15 +224,122 @@ Axios
 
 {% img lb-image https://res.cloudinary.com/swasher/image/upload/v1557570857/blog/flask-vue-4.png 760 %}
 
-
-   
 Все работает, фронтэнд принимает данные от бекенда. На этом будем считать первую версию приложения законченной и перейдем к деплою на Heroku. После удачного деплоя 
 попробуем усложнить приложиние, добавив работу с БД, web-компонентами и т.д.
 
 Heroku
 ===================================
 
+Внесем необходимые изменения в проект и установим недостающие компоненты.
+
+###### Heroku toolbelt
+
 Нам понадобится установленный [Heroku Toolbelt](https://blog.heroku.com/the_heroku_toolbelt).
+
+###### Gunicorn
+
+Веб-сервер для python
+    
+    ::shell
+    $ pipenv install gunicorn
+
+###### Procfile
+
+Создадим [Procfile](https://devcenter.heroku.com/articles/procfile) в корне проекта:
+
+    ::js
+    web: gunicorn app:app --log-file -
+
+######  Build
+
+Heroku будет выполнять устновку всех зависимостей из файла `package.json`. Затем он вызовет команду `postinstall`, 
+которая запустит сборку. Создастся директория `dist`, в которую сборщик поместит сгенерированные файлы css и js 
+
+Добавим строку `postinstall` в `package.json`:
+
+    ::json-object
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "postinstall": "npm run build"
+    },
+    
+###### vue.config.js
+
+Создадим в корне проекта файл настроек vue.js. Нужная нам настройка - `assetsDir`, она указывает путь для генерируемой
+сборщиком статики (внутри `outputDir`). `outputDir` у нас установлен в dist, это пусть для сборки
+
+    module.exports = {
+      assetsDir: 'static',
+      outputDir: 'dist',
+    };
+
+###### Flask
+
+Изменим app.py таким образом, чтобы на продакшене он отдавал данные json по ссылке `/json`, а по ссылке `/` flask будет отдавать сгенерированный vue.js файл
+`index.html`, который находится в `/app/dist`. Изменим наш app.py следующим образом:
+
+    ::python
+    from flask import Flask, jsonify, send_file
+    from flask_cors import CORS
+    import platform
+    
+    app = Flask(__name__, static_folder='dist/static')
+    
+    # enable CORS
+    CORS(app)
+    
+    @app.route('/json')
+    def get_os_name():
+        p = platform.platform()
+        return jsonify({'platform': p})
+    
+    @app.route('/')
+    def index():
+        vuejs_html = '/app/dist/index.html'
+        return send_file(vuejs_html)
+
+Очень важная строчка - `app = Flask(__name__, static_folder='dist/static')`, здесь мы указываем путь к статике, без
+этого фласк не сможет найти js файлы, которые сгенерировала команда `npm run build` в папке `dist` и ничего не заведется.
+
+Конечно, в `Server_os.vue` нужно изменить ссылку, откуда получать данные:
+    
+    ::diff
+    - const path = 'http://localhost:5000/';
+    + const path = '/json';
+    
+Мы убираем localhost, иначе наше приложение на heroku по-прежнему будет показывать версию операционки нашего десктопа.
+И пишем `/json` без указания домена. 
+
+
+###### deploy
+
+Пробуем задеплоить
+
+    $ heroku login
+    $ git init
+    $ heroku apps:create test654888 # any available name
+    $ heroku git:remote --app test654888
+    $ heroku buildpacks:add --index 1 heroku/nodejs
+    $ heroku buildpacks:add --index 2 heroku/python
+    $ heroku config:set FLASK_ENV=production
+    $ heroku config:set FLASK_SECRET=my_secret_key
+    $ git push heroku
+    
+Если еще не было коммитов в ветку мастер на heroku, то пишем `git push --set-upstream heroku master`, далее можно
+просто писать `git push heroku`. Если все прошло удачно, открываем написанную внизу лога ссылку:
+
+{% img https://res.cloudinary.com/swasher/image/upload/v1557671350/blog/flask-vue-5.png %}
+
+Мы видим название ОС, - наше приложение работает! 
+
+###### todo
+
+Есть одна нерешенная проблема, связанная со статикой в папке `public`. Описана тут [issue](https://github.com/gtalarico/flask-vuejs-template/issues/21)
+
+One button deploy
+============================
 
 Так как мы пилим темплейт для автоматического деплоя, настроим проект таким образом, чтобы он разворачивался на
 Heroku путем [нажатия одной кнопки](https://devcenter.heroku.com/articles/heroku-button) в репозитории Github. Создадим
@@ -247,8 +348,8 @@ Heroku путем [нажатия одной кнопки](https://devcenter.her
     {
       "name": "Flask VueJs Heroku Template",
       "description": "template for automatic deploy flask-vue application",
-      "repository": "https://github.com/gtalarico/flask-vuejs-template",
-      "logo": "https://github.com/gtalarico/flask-vuejs-template/raw/master/docs/project-logo.png",
+      "repository": "https://github.com/swasher/flask-vuejs-heroku",
+      "logo": "https://vuejs.org/images/logo.png",
       "keywords": ["flask", "vue", "heroku"],
       "env": {
         "FLASK_ENV": {
@@ -257,7 +358,7 @@ Heroku путем [нажатия одной кнопки](https://devcenter.her
         },
         "SECRET": {
           "description": "Flask Secret Key",
-          "value": "SecretKey"
+          "value": "my_secret_key"
         }
        },
       "addons": [
@@ -270,15 +371,10 @@ Heroku путем [нажатия одной кнопки](https://devcenter.her
           "url": "heroku/python"
         }
       ]
-    } 
+    }
 
 Запилим красивую кнопку в файле README.md:
 
     |One button Installer | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) |
     |---------------------|-------------------------------------------------------------------------------------|
 
-
-Создадим [Procfile](https://devcenter.heroku.com/articles/procfile):
-
-    echo web: gunicorn backend:app --log-file - > Procfile 
-    
