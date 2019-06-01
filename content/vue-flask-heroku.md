@@ -113,7 +113,6 @@ Vue.js
 Flask
 =======================================
 
-    $ mkdir flask-vue-heroku
     $ cd flask-vue-heroku
     $ pipenv install flask
     
@@ -397,7 +396,7 @@ Develop server
 Таким образом, когда axios обратится по ссылке `/json`, он попадет на `localhost:5000/json`. 
 Добавим в файл `vue.config.js` секцию [devServer](https://cli.vuejs.org/ru/config/#devserver):
 
-    ::json
+    ::js
     devServer: {
       proxy: {
         '^/*': {
