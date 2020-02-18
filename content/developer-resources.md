@@ -98,6 +98,8 @@ IDE и редакторы
 
 - [textbox.io](https://textbox.io/) - интегрируемый редактор, платный, есть фри версия, вроде бы без ограничений 
 
+- [bootboxjs.com](http://bootboxjs.com/) - js библиотека разнообразных (dialog, modаl, alert, confirm) окон
+
 Python
 -----------------------
 
