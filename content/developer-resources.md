@@ -66,6 +66,10 @@ IDE и редакторы
 
 - [codepen.io](http://codepen.io/) - тестирование html, css, javascript
 
+- [playcode.io/](https://playcode.io/) - тестирование html, css, javascript
+
+- [codesandbox.io](https://codesandbox.io/) - полноценная IDE
+
 - [bootsnipp.com](http://bootsnipp.com/) - множество образцов макетов на бутстрапе, например формы регистрации
 
 - [runnable.io](https://runnable.io/) - песочница для запуска приложений, в т.ч python/django
@@ -79,10 +83,6 @@ IDE и редакторы
 -----------------------
 
 - [getbootstrap.com](http://getbootstrap.com/) - bootstrap
-
-- [fontawesome.io](http://fontawesome.io/) - иконки, есть платная версия fortawesome
-
-- [glyphicons.com](http://glyphicons.com/) - иконки, в бесплатной версии только базовый набор
 
 - [Effeckt.css](http://h5bp.github.io/Effeckt.css/) - css фреймворк от создателей html5 boilerplate. Реализует различные эффекты
 
@@ -99,6 +99,18 @@ IDE и редакторы
 - [textbox.io](https://textbox.io/) - интегрируемый редактор, платный, есть фри версия, вроде бы без ограничений 
 
 - [bootboxjs.com](http://bootboxjs.com/) - js библиотека разнообразных (dialog, modаl, alert, confirm) окон
+
+Шрифты и иконки
+-------------------------
+
+- [fontawesome.io](http://fontawesome.io/) - иконки, есть платная версия fortawesome
+
+- [glyphicons.com](http://glyphicons.com/) - иконки, в бесплатной версии только базовый набор
+
+- [nerdfonts.com](https://www.nerdfonts.com/#home) - агрегатор иконок
+
+- [programmingfonts.org](https://www.programmingfonts.org/) - большая коллекция IDE-шрифтов в виде фонт-библиотеки
+
 
 Python
 -----------------------
